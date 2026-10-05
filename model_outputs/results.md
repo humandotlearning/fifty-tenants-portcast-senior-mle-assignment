@@ -26,15 +26,18 @@ Assumptions and limits:
 - Exercise model/carrier tariffs and tool policy stay fixed. Rejected carrier calls are unbilled; observed billed costs include retry effects and timed-out work. Costs are observed executed work, not unconstrained demand under the shared 60-successes/minute quota.
 - AWS/vector infrastructure is excluded from projected model/carrier spend. The stipulated pilot infrastructure is $155/month; its scaling is not established, and model/carrier margin is not business profit.
 
-Run from the assignment workspace (Python only, no installation):
+Run from the repository folder. Install `uv` as shown in the [README](../README.md).
+
 ```powershell
-python cost_model.py
-python cost_model.py --lead-frequency 0.5 --output model_outputs_half_lead
+uv sync --locked
+uv run --locked cost_model.py
+uv run --locked cost_model.py --lead-frequency 0.5 --output model_outputs_half_lead
 ```
 
-To run the saved copy from any directory:
+To select other input and output folders:
+
 ```powershell
-python 'C:\Users\nithi\Documents\Codex\2026-10-04\realtime-voice-chat\outputs\portcast-cost-model\cost_model.py' --data 'C:\Users\nithi\Downloads\Compressed\fifty-tenants-portcast-senior-mle-assignment\fifty-tenants-portcast-senior-mle-assignment\data' --output 'C:\Users\nithi\Documents\Codex\2026-10-04\realtime-voice-chat\outputs\portcast-cost-model'
+uv run --locked cost_model.py --data data --output outputs
 ```
 
 Validation: both default and half-lead runs passed inline checks for calendar coverage, tariff reconstruction, tool/question carrier agreement, pilot-total reproduction and tenant seat tiers. Capacity simulation and a shipment-size regression were deliberately omitted.

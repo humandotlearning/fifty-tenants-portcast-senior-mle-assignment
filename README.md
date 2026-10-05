@@ -1,39 +1,42 @@
 # Run the cost model and charts
 
-The model learns four average question costs: operator or team lead, each split into “my shipments” and other questions. It checks predictions on the final two weeks and compares them with averages based only on role. The tenant projection then keeps each role's pilot usage pattern. See results.md for assumptions.
+The model learns four average question costs. It separates operator and team lead questions. It also separates “my shipments” from other questions. It checks predictions on the final two weeks. It compares these predictions with averages based only on role. The tenant projection keeps each role's pilot usage pattern. See [the results](model_outputs/results.md) for assumptions.
 
-Model: Python only. Charts: matplotlib. The original 84-line model stays unchanged; plotting is a separate small script.
+The cost model uses only the Python standard library. The chart script uses `matplotlib`. The files in `poc/` are examples for review. They are not runnable scripts.
 
-From the assignment folder:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/). Then run these commands from the repository folder:
+
 ```powershell
-# Already installed here; only needed on a fresh checkout.
-python -m pip install --target .plot_deps matplotlib
-$env:PYTHONPATH = "$PWD\.plot_deps"
-python cost_model.py
-python plot_costs.py
+uv sync --locked
+uv run --locked cost_model.py
+uv run --locked plot_costs.py
 ```
 
-Outputs go into model_outputs:
-- tenant_costs.csv: each customer's cost, revenue and margin.
-- fit_heldout.png: actual question costs as blue dots, predictions as orange lines, and actual group averages as green diamonds.
-- monthly_spending.png: operator and lead contributions under three assumptions.
+`uv` selects Python 3.10 from `.python-version`. It creates `.venv` and installs the package versions in `uv.lock`. It downloads Python if needed. You do not need to activate `.venv` or set `PYTHONPATH`. If you previously set `PYTHONPATH` to `.plot_deps`, clear it before you run the scripts.
 
-To run the saved copies from any directory:
+Outputs go into `model_outputs`:
+
+- `tenant_costs.csv`: each customer's cost, revenue, and margin.
+- `fit_heldout.png`: actual question costs as blue dots. Predictions are orange lines. Actual group averages are green diamonds.
+- `monthly_spending.png`: operator and lead costs under three assumptions.
+
+To assume leads ask half as many questions, keep their question mix unchanged:
+
 ```powershell
-$assignment = 'C:\Users\nithi\Downloads\Compressed\fifty-tenants-portcast-senior-mle-assignment\fifty-tenants-portcast-senior-mle-assignment'
-$outputs = 'C:\Users\nithi\Documents\Codex\2026-10-04\realtime-voice-chat\outputs\portcast-cost-model'
-$env:PYTHONPATH = "$assignment\.plot_deps"
-python "$outputs\cost_model.py" --data "$assignment\data" --output "$outputs"
-python "$outputs\plot_costs.py" --data "$assignment\data" --output "$outputs"
+uv run --locked cost_model.py --lead-frequency 0.5 --output model_outputs_half_lead
 ```
 
-To assume leads ask half as many questions, keeping their question mix unchanged:
+Both scripts accept `--data` and `--output`. Use these options to select other folders:
+
 ```powershell
-python "$outputs\cost_model.py" --data "$assignment\data" --lead-frequency 0.5 --output "$outputs\half_lead"
+uv run --locked cost_model.py --data data --output outputs
+uv run --locked plot_costs.py --data data --output outputs
 ```
 
-The plot script always shows both full and half lead frequency; it has no frequency option. Rerunning replaces its generated PNGs and the model's generated CSV in the selected output folder.
+The chart script always shows both full and half lead frequency. It has no frequency option. Each run replaces the generated files in the selected output folder.
 
-**$12,523.41/month = 6.47 times** fifty identical pilots ($1,935.31). **$6,754.57/month = 3.49 times** that baseline, under half lead frequency. The half case is not the 6.47-times case.
+To add a package, run `uv add <package>`. To remove a package, run `uv remove <package>`. Commit `pyproject.toml` and `uv.lock` after you change dependencies.
 
-These are model + carrier costs for 30-day months. Calculations retain unrounded rates; displayed component labels may sum one cent differently. Only ONE pilot lead was observed. The charts show conditional cost arithmetic, not a learned relationship between customer size and spending or proof of capacity.
+**$12,523.41/month = 6.47 times** fifty identical pilots ($1,935.31). With half lead frequency, **$6,754.57/month = 3.49 times** that baseline.
+
+These costs include the model and carrier for 30-day months. Calculations use unrounded rates. Rounded chart labels can differ from their total by one cent. The pilot had only one team lead. The charts show costs under stated assumptions. They do not prove a relationship between customer size and spending. They do not prove system capacity.

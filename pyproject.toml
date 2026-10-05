@@ -1,0 +1,5 @@
+[project]
+name = "fifty-tenants-portcast-senior-mle-assignment"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["matplotlib>=3.10"]
