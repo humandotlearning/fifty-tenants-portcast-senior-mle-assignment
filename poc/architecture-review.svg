@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Freight operations assistant: current C4 Container diagram</title>
+<desc id="desc">Operator to Web Client to API Gateway to Lambda. Lambda calls the LLM and live carrier API and reads Postgres and the vector index. S3 documents are indexed; a background ingest job updates Postgres from a carrier bulk feed. CloudWatch captures logs. This is the existing single-customer POC.</desc>
+<rect width="1600" height="900" fill="#ffffff"/>
+<text x="40" y="51" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="32" font-weight="700" fill="#172337">Freight operations assistant</text>
+<text x="40" y="79" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">C4 Container diagram  /  Current single-customer POC</text>
+<polyline points="890,55 935,55" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="935,55 925,50.0 925,60.0" fill="#2458b5"/>
+<text x="946" y="60" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Request / synchronous</text>
+<polyline points="1130,55 1170,55" fill="none" stroke="#526070" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1170,55 1162,51.0 1162,59.0" fill="#526070"/>
+<text x="1180" y="60" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Data / service</text>
+<polyline points="1350,55 1390,55" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="1390,55 1382,51.0 1382,59.0" fill="#705580"/>
+<text x="1400" y="60" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Background / logs</text>
+<rect x="220" y="110" width="1060" height="780" rx="9" fill="#ffffff" stroke="#8593a3" stroke-width="2"/>
+<text x="260" y="152" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#172337">Freight Operations Assistant — Single Customer</text>
+<text x="260" y="193" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#2458b5">REQUEST FLOW</text>
+<text x="1340" y="137" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#526070">SYNCHRONOUS DEPENDENCIES</text>
+<polyline points="150,290 260,290" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="260,290 250,285.0 250,295.0" fill="#2458b5"/>
+<polyline points="490,290 550,290" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="550,290 540,285.0 540,295.0" fill="#2458b5"/>
+<polyline points="780,290 850,290" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="850,290 840,285.0 840,295.0" fill="#2458b5"/>
+<polyline points="1200,258 1305,258 1305,230 1340,230" fill="none" stroke="#2458b5" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1340,230 1332,226.0 1332,234.0" fill="#2458b5"/>
+<polyline points="1200,312 1305,312 1305,460 1340,460" fill="none" stroke="#2458b5" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1340,460 1332,456.0 1332,464.0" fill="#2458b5"/>
+<polyline points="880,360 880,448 390,448 390,520" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="390,520 386.0,512 394.0,512" fill="#166b69"/>
+<polyline points="1060,360 1060,520" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1060,520 1056.0,512 1064.0,512" fill="#166b69"/>
+<polyline points="705,660 705,698 1030,698 1030,660" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="1030,660 1026.0,668 1034.0,668" fill="#166b69"/>
+<polyline points="200,795 260,795" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="260,795 252,791.0 252,799.0" fill="#705580"/>
+<polyline points="490,740 490,660" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="490,660 486.0,668 494.0,668" fill="#705580"/>
+<polyline points="1170,360 1170,405 1240,405 1240,795 1200,795" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="1200,795 1208,791.0 1208,799.0" fill="#705580"/>
+<circle cx="100" cy="239" r="22" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
+<rect x="50" y="267" width="100" height="70" rx="12" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
+<text x="100" y="375" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#172337">Operator / User</text>
+<text x="100" y="399" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#526070">[Person]</text>
+<text x="100" y="423" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Operator or team lead</text>
+<rect x="260" y="220" width="230" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="1.8"/>
+<rect x="260" y="220" width="5" height="140" rx="2" fill="#2458b5" stroke="#2458b5" stroke-width="1"/>
+<text x="375.0" y="243" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#2458b5">[Container]</text>
+<text x="375.0" y="269" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Web Client</text>
+<text x="375.0" y="292" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Browser application</text>
+<text x="375.0" y="318" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Questions and answers</text>
+<text x="375.0" y="337" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Allows concurrent requests</text>
+<rect x="550" y="220" width="230" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="1.8"/>
+<rect x="550" y="220" width="5" height="140" rx="2" fill="#2458b5" stroke="#2458b5" stroke-width="1"/>
+<text x="665.0" y="243" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#2458b5">[Container]</text>
+<text x="665.0" y="269" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">API Gateway</text>
+<text x="665.0" y="292" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">AWS API Gateway</text>
+<text x="665.0" y="318" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Authenticated user context</text>
+<text x="665.0" y="337" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Request timeout: 29 s</text>
+<rect x="850" y="220" width="350" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="1.8"/>
+<rect x="850" y="220" width="5" height="140" rx="2" fill="#2458b5" stroke="#2458b5" stroke-width="1"/>
+<text x="1025.0" y="243" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#2458b5">[Container]</text>
+<text x="1025.0" y="269" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Operations Assistant</text>
+<text x="1025.0" y="292" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">AWS Lambda · Python</text>
+<text x="1025.0" y="318" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Agent loop, four tools and answer cache</text>
+<text x="1025.0" y="337" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Lambda timeout: 90 s</text>
+<rect x="1340" y="160" width="230" height="140" rx="7" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
+<rect x="1340" y="160" width="5" height="140" rx="2" fill="#526070" stroke="#526070" stroke-width="1"/>
+<text x="1455.0" y="183" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#526070">[External System]</text>
+<text x="1455.0" y="209" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">LLM Vendor</text>
+<text x="1455.0" y="232" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">m-large</text>
+<text x="1455.0" y="258" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Tool use and answer generation</text>
+<rect x="1340" y="390" width="230" height="140" rx="7" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
+<rect x="1340" y="390" width="5" height="140" rx="2" fill="#526070" stroke="#526070" stroke-width="1"/>
+<text x="1455.0" y="413" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#526070">[External System]</text>
+<text x="1455.0" y="439" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Carrier Tracking API</text>
+<text x="1455.0" y="462" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Live carrier service</text>
+<text x="1455.0" y="488" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Live container status</text>
+<text x="1455.0" y="507" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Account limit: 60 requests/min</text>
+<text x="260" y="494" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#166b69">DATA LAYER</text>
+<rect x="260" y="520" width="260" height="140" rx="7" fill="#edf8f6" stroke="#166b69" stroke-width="1.8"/>
+<rect x="260" y="520" width="5" height="140" rx="2" fill="#166b69" stroke="#166b69" stroke-width="1"/>
+<text x="390.0" y="543" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#166b69">[Database]</text>
+<text x="390.0" y="569" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">RDS / Postgres</text>
+<text x="390.0" y="592" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Amazon RDS · PostgreSQL</text>
+<text x="390.0" y="618" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Shipments, events and users</text>
+<text x="390.0" y="637" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Answer cache · TTL 24 h</text>
+<rect x="590" y="520" width="230" height="140" rx="7" fill="#edf8f6" stroke="#166b69" stroke-width="1.8"/>
+<rect x="590" y="520" width="5" height="140" rx="2" fill="#166b69" stroke="#166b69" stroke-width="1"/>
+<text x="705.0" y="543" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#166b69">[Datastore]</text>
+<text x="705.0" y="569" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Document Storage</text>
+<text x="705.0" y="592" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Amazon S3</text>
+<text x="705.0" y="618" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Bills of lading and invoices</text>
+<text x="705.0" y="637" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Packing lists</text>
+<rect x="890" y="520" width="280" height="140" rx="7" fill="#edf8f6" stroke="#166b69" stroke-width="1.8"/>
+<rect x="890" y="520" width="5" height="140" rx="2" fill="#166b69" stroke="#166b69" stroke-width="1"/>
+<text x="1030.0" y="543" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#166b69">[Database]</text>
+<text x="1030.0" y="569" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Vector DB</text>
+<text x="1030.0" y="592" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Vendor vector database</text>
+<text x="1030.0" y="618" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">One customer document index</text>
+<text x="1030.0" y="637" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Returns top 3 passages</text>
+<text x="260" y="727" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#705580">BACKGROUND PROCESSING</text>
+<text x="960" y="727" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#705580">OBSERVABILITY</text>
+<rect x="30" y="740" width="170" height="140" rx="7" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
+<rect x="30" y="740" width="5" height="140" rx="2" fill="#526070" stroke="#526070" stroke-width="1"/>
+<text x="115.0" y="763" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#526070">[External System]</text>
+<text x="115.0" y="789" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Carrier Bulk</text>
+<text x="115.0" y="812" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Feed</text>
+<text x="115.0" y="835" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Carrier data</text>
+<text x="115.0" y="861" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Shipments and events</text>
+<rect x="260" y="740" width="260" height="110" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="1.8"/>
+<rect x="260" y="740" width="5" height="110" rx="2" fill="#705580" stroke="#705580" stroke-width="1"/>
+<text x="390.0" y="763" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#705580">[Container]</text>
+<text x="390.0" y="789" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Shipment Ingest Job</text>
+<text x="390.0" y="812" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Scheduled job</text>
+<text x="390.0" y="838" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Refreshes data every 4 hours</text>
+<rect x="960" y="740" width="240" height="110" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="1.8"/>
+<rect x="960" y="740" width="5" height="110" rx="2" fill="#705580" stroke="#705580" stroke-width="1"/>
+<text x="1080.0" y="763" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#705580">[Container]</text>
+<text x="1080.0" y="789" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">CloudWatch Logs</text>
+<text x="1080.0" y="812" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Amazon CloudWatch</text>
+<text x="1080.0" y="838" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Question, tool and API logs</text>
+<rect x="181.5" y="259" width="45.0" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="204" y="274" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Uses</text>
+<rect x="491.74609375" y="259" width="56.5078125" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="520" y="274" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">HTTPS</text>
+<rect x="786.75390625" y="259" width="56.4921875" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="815" y="274" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Invoke</text>
+<rect x="1209.25" y="223" width="105.5" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="1262" y="238" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">LLM messages</text>
+<rect x="1284.24609375" y="335" width="131.5078125" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="1350" y="350" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Live status · HTTPS</text>
+<rect x="517.25" y="422" width="269.5" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="652" y="437" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">SQL · shipment lookup and answer cache</text>
+<rect x="997.00390625" y="455" width="125.9921875" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="1060" y="470" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Retrieve passages</text>
+<rect x="787.75" y="688" width="142.5" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="859" y="703" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Document indexing¹</text>
+<rect x="504.75" y="690" width="170.5" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="590" y="705" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Write shipments / events</text>
+<rect x="1193.5" y="578" width="79.0" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<text x="1233" y="593" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Write logs</text>
+<text x="590" y="820" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">¹ Indexing pipeline is described;</text>
+<text x="590" y="842" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">implementation is not supplied.</text>
+</svg>

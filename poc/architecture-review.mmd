@@ -1,0 +1,47 @@
+%% Semantic C4 source. The accompanying SVG preserves the review layout,
+%% typography, spacing, and explicit orthogonal connector routing.
+C4Container
+    title Freight operations assistant — Current single-customer POC
+
+    Person(operator, "Operator / User", "Operator or team lead")
+
+    System_Boundary(poc, "Freight Operations Assistant — Single Customer") {
+        Container(web, "Web Client", "Browser application", "Questions and answers; concurrent requests")
+        Container(gateway, "API Gateway", "AWS API Gateway", "Authenticated user context; request timeout 29 s")
+        Container(assistant, "Operations Assistant", "AWS Lambda / Python", "Agent loop, four tools and answer cache; timeout 90 s")
+        ContainerDb(postgres, "RDS / Postgres", "Amazon RDS / PostgreSQL", "Shipments, events, users and answer cache; cache TTL 24 h")
+        ContainerDb(s3, "Document Storage", "Amazon S3", "Bills of lading, invoices and packing lists")
+        ContainerDb(vector, "Vector DB", "Vendor vector database", "One customer index; top 3 passages")
+        Container(ingest, "Shipment Ingest Job", "Scheduled job", "Refreshes shipments and events every 4 hours")
+        Container(logs, "CloudWatch Logs", "Amazon CloudWatch", "Question, tool-call and API access logs")
+    }
+
+    System_Ext(llm, "LLM Vendor", "m-large; tool use and answer generation")
+    System_Ext(tracking, "Carrier Tracking API", "Live container status; account limit 60 requests/minute")
+    System_Ext(feed, "Carrier Bulk Feed", "Shipment and event feed")
+
+    Rel_R(operator, web, "Uses")
+    Rel_R(web, gateway, "Submits questions", "HTTPS")
+    Rel_R(gateway, assistant, "Invokes with user context")
+    Rel_R(assistant, llm, "Messages and tools", "Vendor SDK")
+    Rel_R(assistant, tracking, "Live status", "HTTPS")
+    Rel_D(assistant, postgres, "Shipment lookup; read/write answer cache", "SQL")
+    Rel_D(assistant, vector, "Retrieve passages", "Vector DB client")
+    Rel_R(s3, vector, "Document indexing; pipeline unspecified")
+    Rel_R(feed, ingest, "Bulk data")
+    Rel_U(ingest, postgres, "Write shipments and events", "SQL")
+    Rel_D(assistant, logs, "Question and tool-call logs")
+    Rel(gateway, logs, "API access logs")
+
+    UpdateElementStyle(operator, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
+    UpdateElementStyle(web, $bgColor="#edf3ff", $fontColor="#172337", $borderColor="#2458b5")
+    UpdateElementStyle(gateway, $bgColor="#edf3ff", $fontColor="#172337", $borderColor="#2458b5")
+    UpdateElementStyle(assistant, $bgColor="#edf3ff", $fontColor="#172337", $borderColor="#2458b5")
+    UpdateElementStyle(postgres, $bgColor="#edf8f6", $fontColor="#172337", $borderColor="#166b69")
+    UpdateElementStyle(s3, $bgColor="#edf8f6", $fontColor="#172337", $borderColor="#166b69")
+    UpdateElementStyle(vector, $bgColor="#edf8f6", $fontColor="#172337", $borderColor="#166b69")
+    UpdateElementStyle(ingest, $bgColor="#f6f1f8", $fontColor="#172337", $borderColor="#705580")
+    UpdateElementStyle(logs, $bgColor="#f6f1f8", $fontColor="#172337", $borderColor="#705580")
+    UpdateElementStyle(llm, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
+    UpdateElementStyle(tracking, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
+    UpdateElementStyle(feed, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")

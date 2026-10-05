@@ -1,0 +1,34 @@
+{
+  "pilot_questions": 1952,
+  "cache_hit_count": 323,
+  "pilot_timeout_count": 132,
+  "pilot_timeout_cost_pct": 66.63386653931937,
+  "pilot_step_cap_count": 129,
+  "portfolio_question_count": 450,
+  "portfolio_step_cap_count": 129,
+  "pilot_carrier_429_count": 100,
+  "pilot_peak_successful_carrier_calls_in_utc_minute": 60,
+  "pilot_live_differs_from_db_pct": 3.9758429793658783,
+  "customers": 50,
+  "seats": 5267,
+  "leads": 374,
+  "active_shipments": 175750,
+  "revenue_month_usd": 45340.0,
+  "projected_model_month_usd": 10777.225776153833,
+  "projected_carrier_month_usd": 1746.1830769230812,
+  "projected_model_carrier_month_usd": 12523.408853076924,
+  "illustrative_scenario": {
+    "assumptions": [
+      "60% fewer input and output tokens",
+      "Half of remaining token volume uses m-fast at 20% of m-large tariff",
+      "70% fewer paid carrier calls"
+    ],
+    "model_month_usd": 2586.53418627692,
+    "carrier_month_usd": 523.8549230769244,
+    "model_carrier_month_usd": 3110.3891093538446,
+    "saving_month_usd": 9413.01974372308,
+    "infrastructure": "Excluded. This is a conditional scenario, not a measured result."
+  },
+  "carrier_upgrade_cost_break_even_calls_per_month": 1500000.0,
+  "capacity_note": "The carrier minute peak is observed pilot traffic. It is not a 50-customer capacity projection."
+}

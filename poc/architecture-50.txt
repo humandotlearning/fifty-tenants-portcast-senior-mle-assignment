@@ -1,0 +1,162 @@
+Proposed architecture for 50 customers
+
+This design is a proposal. It is not implemented. Keep the current API Gateway,
+Lambda, Postgres, S3, vector service and free carrier bulk feed. Share these
+services across customers. Add an SQS work queue and a dead-letter queue. Split
+the request handler from the workers. Use the SVG for the exact review layout.
+The Mermaid file gives the C4 container structure. The diagram shows the main
+relationships. Other application containers also send logs to CloudWatch.
+
+The evidence comes from handler.py, tools.py, schema.sql, prompt.md,
+costs-and-limits.md and the pilot CSV files. The pilot has 1,952 questions.
+There are 132 HTTP 504 responses and 129 runs that reach the step limit.
+All 129 capped runs are shipment-list questions. Timed-out runs account for
+66.6% of pilot model and carrier spend. The carrier logs have 100 rejected
+attempts. One pilot minute already reaches the 60-successful-calls limit.
+These findings show that a faster model alone cannot fix the system.
+
+1. Enforce customer and user access in code.
+
+Get the user ID from the authorizer. Find the tenant and team membership in
+trusted server data. Do not accept tenant or access scope from the model.
+Add tenant_id and team scope to data, jobs and document metadata. Use Postgres
+row-level security. This feature limits which rows an application can read or
+change. Use an application role that cannot bypass these rules. Set access
+context for each transaction. Do not let a reused connection retain the last
+tenant's context. Use tenant-aware keys and foreign keys.
+
+Apply access rules to each shipment lookup and live carrier request. Team
+leads can read their team's data. Recheck access when a user reads a job result.
+Use S3 policies and checked file links as well as tenant paths. Filter vector
+search by tenant and document access before retrieval. Confirm that the vector
+service supports these filters. Test two tenants with the same booking number.
+Test an operator and a team lead within the same tenant.
+
+2. Return quickly and keep a durable job record.
+
+On a cache hit, return an authorized, valid answer. For new work, store a job
+and an outbox row in one Postgres transaction. The outbox records work that
+must be sent to SQS. Publish the job and return HTTP 202 with its job ID.
+A scheduled invocation of the same Operations Assistant Lambda republishes
+pending outbox rows. This repairs a crash between the database write and the
+queue send. Use a stable request ID to find the same job after a client retry.
+Reject reuse of that ID with a different question. Poll job status with a
+bounded interval and backoff. Check tenant and user access on every read.
+
+Workers use a job lease, save progress and resume unfinished work. Stop each
+work unit before its time or cost limit. Mark a result complete, partial or
+failed. Do not cache a partial report as a complete answer. Repeated delivery
+must not rerun completed jobs. External model or carrier calls can still be
+repeated if a worker fails before it saves the response. Include that risk in
+the retry budget. Use bounded retries and a dead-letter queue for failed jobs.
+Use partial batch responses so one failure does not repeat successful jobs.
+
+3. Make shipment reports a database operation.
+
+Use fixed, parameterized SQL to list and count all shipments in the user's
+scope. Keep the late rule in code: estimated arrival is more than 24 hours
+after planned arrival. Add indexes for tenant, team or owner, and report
+filters. Return a count and a paged list. Do not let the model visit every
+shipment or write arbitrary SQL. Use templates for simple status answers.
+Use a model to interpret a question or explain selected facts when needed.
+Route simple, tested work to m-fast. Keep m-large for work that needs it.
+Check factual accuracy, document sources and complete report counts before
+changing model routing. A cheaper model is not useful if it causes more retries.
+
+4. Control freshness and the carrier quota.
+
+Keep the free feed at its stated four-hour interval. Store source and check
+timestamps. A report based on the feed must show its data time. This changes
+the POC policy that asks for a fresh carrier call for every shipment. Confirm
+the new product policy before using it. A request for fully live data must
+wait for live checks or clearly show incomplete coverage.
+
+Reuse recent carrier results for the same authorized shipment within a tenant.
+A five-minute reuse window is a proposed starting point, not a tested rule.
+Do not refresh all 175,750 shipments every five minutes. Check requested or
+priority shipments. Merge duplicate checks and save results. Preserve newer
+live data when an older bulk record arrives. Cache answers by tenant, access
+scope, question, permissions version and data version. Invalidate stale data.
+
+Use a shared, atomic carrier counter in Postgres. Respect the calendar-minute
+account limit across all workers. Reserve capacity conservatively. Release
+database locks before external calls. When no capacity remains, save progress
+and defer work. Do not keep a Lambda asleep. Honour Retry-After when supplied.
+Use per-tenant active-job limits so one customer cannot fill the work queue.
+The higher carrier tier costs more at projected volume. Its cost-only break-even
+is 1.5 million successful calls per month. Buy it earlier only if measured
+live-status demand requires the extra capacity. A queue does not raise capacity.
+
+5. Protect the data services and handle outages.
+
+Use one shared RDS Multi-AZ instance deployment with a standby in another zone.
+This supports failover; the standby is not a read replica. Reconnect after
+failover. Keep backups and test a restore. Close database connections explicitly.
+Set worker concurrency from measured database capacity. Keep capacity for the
+API and ingestion. Add a database proxy only if connection measurements justify
+its extra cost. Keep transactions short.
+
+Stop repeated calls to an unavailable provider for a bounded period. Show the
+last known status with its timestamp, or show that live data is unavailable.
+If the LLM fails, return structured status or report results when available.
+If vector search fails, keep shipment queries available and report that document
+search is unavailable. Log tenant and job IDs, source age, queue age, failed
+jobs, provider errors, model tokens and cost. Limit log retention. Do not put
+document text or full questions in general logs by default.
+
+Keep the vector service initially. Measure its actual document volume and
+confirm filter support. If vectors grew with shipments at the pilot ratio,
+9,000 / 300 * 175,750 would be about 5.27 million vectors. That is a planning
+scenario, not a measured forecast. It exceeds the starter tier's 1 million
+limit. The stated 10 million tier costs $300/month. Confirm the embedding API,
+document parsing method and indexing cost before building the index job.
+
+6. Use a conditional cost target and measure the result.
+
+The existing cost model gives these 30-day, all-customers-live amounts:
+4,893 operators * $0.201459/month + 374 leads * $30.849380/month = about
+$12,523.41/month for model and carrier calls. Model cost is $10,777.23.
+Carrier cost is $1,746.18. Revenue is $45,340/month for 5,267 seats.
+Only one pilot team lead was observed. This estimate keeps pilot role usage,
+cache behaviour and capped work. It is not a capacity test. Safe cache rules
+and complete answers can increase cost relative to the current POC.
+
+Illustrative savings case:
+- Reduce both input and output token volume by 60%.
+- Send half of the remaining input and output tokens to m-fast. Its stated
+  tariffs are 20% of m-large tariffs. Keep the other half on m-large.
+- Reduce paid carrier calls by 70% through the agreed freshness policy.
+
+Model: $10,777.23 * 0.40 * (0.50 + 0.50 * 0.20) = $2,586.53/month.
+Carrier: $1,746.18 * 0.30 = $523.85/month.
+Combined: $3,110.39/month, or about $0.59/seat/month.
+Conditional variable-cost saving: $9,413.02/month.
+
+These are assumptions, not measured savings. Infrastructure is excluded.
+The proposed total is $3,110.39 + new infrastructure cost. The old total is
+$12,523.41 + old infrastructure cost at 50 customers. Overall cost falls in
+this case only if the infrastructure increase is less than $9,413.02/month.
+The $155/month pilot infrastructure figure is not a quote for 50 customers.
+Price Multi-AZ, SQS, storage, indexing, log volume and worker usage after a
+load test. Do not create one full stack per customer.
+
+7. Deliver changes in this order.
+
+Before the next customer: fix tenant and user access, cache scope, complete SQL
+reports, durable jobs, retry limits and the shared carrier quota. Add Multi-AZ
+and a tested restore before the service depends on paid production workloads.
+Then test model routing and freshness reuse. Compare answer quality and spend
+with the pilot. Replay Monday bursts using customer team counts, shipment scope,
+rollout months and time zones. Test provider failure, duplicate delivery and
+database failover. Check queue delay, data age, database connections and cost
+for each tenant. Use the results to set quotas and decide on capacity upgrades.
+
+The Python cost checks passed. The diagram was rendered and inspected.
+No production services or POC application code were changed. Load capacity,
+failover behaviour, model quality and the savings assumptions remain untested.
+
+Technical references:
+https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.Failover.html
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html
+https://www.postgresql.org/docs/current/ddl-rowsecurity.html

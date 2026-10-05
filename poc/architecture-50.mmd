@@ -1,0 +1,56 @@
+%% Proposed design. This is not the implemented POC.
+%% architecture-50.svg preserves the exact 16:9 review layout.
+%% This source preserves the C4 container structure.
+C4Container
+    title Freight operations assistant — Proposed design for 50 customers
+    Person(operator, "Operator / User", "Customer team member")
+
+    System_Boundary(system, "Freight Operations Assistant — 50 Customers") {
+        Container(web, "Web Client", "Browser application", "Shows answers and job status; reuses request ID on retry")
+        Container(gateway, "API Gateway", "AWS API Gateway", "Checks user identity; routes questions and job reads")
+        Container(api, "Operations Assistant", "API Lambda", "Checks tenant access and job limits; returns answer or job ID")
+        Container(queue, "Job Queues", "Amazon SQS", "Work queue and dead-letter queue; retries failed jobs")
+        Container(worker, "Assistant Workers", "AWS Lambda", "SQL reports and model use; limits for jobs and carrier calls")
+        ContainerDb(postgres, "RDS / Postgres", "Amazon RDS / PostgreSQL", "Tenant rules, jobs, caches and quotas; primary and standby in two zones")
+        ContainerDb(s3, "Document Storage", "Amazon S3", "Customer document files; separate tenant paths")
+        ContainerDb(vector, "Vector DB", "Existing vector service", "Search only permitted documents; tenant and document access filters")
+        Container(ingest, "Shipment Ingest Job", "Scheduled Lambda", "Updates shipment data; feed interval every 4 hours")
+        Container(indexer, "Document Index Job", "Lambda / S3 events", "Reads and tags document text; updates the search index")
+        Container(logs, "CloudWatch Logs", "Amazon CloudWatch", "Logs, cost metrics and alarms; tracks each tenant and job")
+    }
+
+    System_Ext(llm, "LLM Vendor", "m-fast for simple work; m-large for complex work")
+    System_Ext(carrier, "Carrier Tracking API", "One shared account quota; current limit 60 requests/minute")
+    System_Ext(feed, "Carrier Bulk Feed", "Shipment and event data")
+
+    Rel_R(operator, web, "Uses")
+    Rel_R(web, gateway, "Questions and job reads", "HTTPS")
+    Rel_R(gateway, api, "Invoke with user identity")
+    Rel_D(api, postgres, "Read cache; save job; read result", "SQL")
+    Rel_D(api, queue, "Queue job")
+    Rel_R(queue, worker, "Run job")
+    Rel_R(worker, llm, "Model calls", "Vendor SDK")
+    Rel_R(worker, carrier, "Live status within the account quota", "HTTPS")
+    Rel_D(worker, postgres, "SQL reports; save results; share recent status", "SQL")
+    Rel_D(worker, vector, "Read permitted passages")
+    Rel_R(feed, ingest, "Bulk shipment data")
+    Rel_U(ingest, postgres, "Update shipment rows", "SQL")
+    Rel_D(s3, indexer, "New documents")
+    Rel_U(indexer, vector, "Write document index")
+    Rel_D(worker, logs, "Job logs, metrics and alarms")
+
+    UpdateElementStyle(operator, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
+    UpdateElementStyle(web, $bgColor="#edf3ff", $fontColor="#172337", $borderColor="#2458b5")
+    UpdateElementStyle(gateway, $bgColor="#edf3ff", $fontColor="#172337", $borderColor="#2458b5")
+    UpdateElementStyle(api, $bgColor="#edf3ff", $fontColor="#172337", $borderColor="#2458b5")
+    UpdateElementStyle(worker, $bgColor="#edf3ff", $fontColor="#172337", $borderColor="#2458b5")
+    UpdateElementStyle(postgres, $bgColor="#edf8f6", $fontColor="#172337", $borderColor="#166b69")
+    UpdateElementStyle(s3, $bgColor="#edf8f6", $fontColor="#172337", $borderColor="#166b69")
+    UpdateElementStyle(vector, $bgColor="#edf8f6", $fontColor="#172337", $borderColor="#166b69")
+    UpdateElementStyle(queue, $bgColor="#f6f1f8", $fontColor="#172337", $borderColor="#705580")
+    UpdateElementStyle(ingest, $bgColor="#f6f1f8", $fontColor="#172337", $borderColor="#705580")
+    UpdateElementStyle(indexer, $bgColor="#f6f1f8", $fontColor="#172337", $borderColor="#705580")
+    UpdateElementStyle(logs, $bgColor="#f6f1f8", $fontColor="#172337", $borderColor="#705580")
+    UpdateElementStyle(llm, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
+    UpdateElementStyle(carrier, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
+    UpdateElementStyle(feed, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")

@@ -1,0 +1,51 @@
+tenant_id,name,region,utc_offset_hours,status,target_go_live,seats,teams,active_shipments,price_per_seat_usd
+T00,FF-00 (Singapore),APAC,8,pilot,live,40,1,300,10
+T01,FF-01 (Shenzhen),APAC,8,signed,2026-10,246,16,8450,7
+T02,FF-02 (Kuala Lumpur),APAC,8,signed,2026-11,64,5,2630,10
+T03,FF-03 (Perth),APAC,8,signed,2026-11,114,7,4310,10
+T04,FF-04 (Savannah),Americas,-5,signed,2026-12,165,14,4640,7
+T05,FF-05 (Taipei),APAC,8,pipeline,2027-01,52,4,1330,10
+T06,FF-06 (Rotterdam),Europe,1,pipeline,2027-01,44,4,1350,10
+T07,FF-07 (Shanghai),APAC,8,pipeline,2027-01,135,10,3990,10
+T08,FF-08 (Hamburg),Europe,1,pipeline,2027-01,70,4,1770,10
+T09,FF-09 (Shanghai),APAC,8,pipeline,2027-01,185,13,8260,7
+T10,FF-10 (Rotterdam),Europe,1,pipeline,2027-02,19,1,600,10
+T11,FF-11 (Savannah),Americas,-5,pipeline,2027-02,131,10,3930,10
+T12,FF-12 (Hamburg),Europe,1,pipeline,2027-02,82,5,2350,10
+T13,FF-13 (Kuala Lumpur),APAC,8,pipeline,2027-02,41,3,1860,10
+T14,FF-14 (Savannah),Americas,-5,pipeline,2027-02,101,7,2830,10
+T15,FF-15 (Delhi),India,5.5,pipeline,2027-03,65,5,1720,10
+T16,FF-16 (Genoa),Europe,1,pipeline,2027-03,20,2,760,10
+T17,FF-17 (Hamburg),Europe,1,pipeline,2027-03,207,16,5920,7
+T18,FF-18 (Mumbai),India,5.5,pipeline,2027-03,39,2,1550,10
+T19,FF-19 (Rotterdam),Europe,1,pipeline,2027-03,67,5,1790,10
+T20,FF-20 (Taipei),APAC,8,pipeline,2027-04,163,12,6390,7
+T21,FF-21 (Shanghai),APAC,8,pipeline,2027-04,17,1,450,10
+T22,FF-22 (Taipei),APAC,8,pipeline,2027-04,222,16,5620,7
+T23,FF-23 (Shanghai),APAC,8,pipeline,2027-04,26,1,940,10
+T24,FF-24 (Singapore),APAC,8,pipeline,2027-04,149,12,5480,10
+T25,FF-25 (Savannah),Americas,-5,pipeline,2027-05,75,6,2350,10
+T26,FF-26 (Genoa),Europe,1,pipeline,2027-05,94,8,4220,10
+T27,FF-27 (Shanghai),APAC,8,pipeline,2027-05,86,6,3810,10
+T28,FF-28 (Genoa),Europe,1,pipeline,2027-05,32,2,1360,10
+T29,FF-29 (Rotterdam),Europe,1,pipeline,2027-05,78,6,2070,10
+T30,FF-30 (Savannah),Americas,-5,pipeline,2027-06,36,2,1300,10
+T31,FF-31 (Rotterdam),Europe,1,pipeline,2027-06,97,8,2580,10
+T32,FF-32 (Antwerp),Europe,1,pipeline,2027-06,766,63,23080,6
+T33,FF-33 (Taipei),APAC,8,pipeline,2027-06,89,6,3580,10
+T34,FF-34 (Hamburg),Europe,1,pipeline,2027-06,43,3,1280,10
+T35,FF-35 (Toronto),Americas,-5,pipeline,2027-07,52,4,1630,10
+T36,FF-36 (Perth),APAC,8,pipeline,2027-07,127,7,4380,10
+T37,FF-37 (Taipei),APAC,8,pipeline,2027-07,70,4,2750,10
+T38,FF-38 (Kuala Lumpur),APAC,8,pipeline,2027-07,136,8,5050,10
+T39,FF-39 (Le Havre),Europe,1,pipeline,2027-07,24,2,610,10
+T40,FF-40 (Shanghai),APAC,8,pipeline,2027-08,109,6,4410,10
+T41,FF-41 (Shenzhen),APAC,8,pipeline,2027-08,109,6,4470,10
+T42,FF-42 (Singapore),APAC,8,pipeline,2027-08,95,6,2390,10
+T43,FF-43 (Hong Kong),APAC,8,pipeline,2027-08,38,3,1460,10
+T44,FF-44 (Singapore),APAC,8,pipeline,2027-08,109,7,3710,10
+T45,FF-45 (Taipei),APAC,8,pipeline,2027-09,147,8,6030,10
+T46,FF-46 (Manila),APAC,8,pipeline,2027-09,49,4,1300,10
+T47,FF-47 (Kuala Lumpur),APAC,8,pipeline,2027-09,79,5,2520,10
+T48,FF-48 (Hamburg),Europe,1,pipeline,2027-09,29,2,1170,10
+T49,FF-49 (Toronto),Americas,-5,pipeline,2027-09,234,16,9020,7
