@@ -1,0 +1,324 @@
+question_id,asked_at_utc,user_id,question_text,cache_key,cache_hit,http_status,stop_reason,llm_calls,tool_calls,carrier_calls,tokens_in,tokens_out,latency_ms,run_ms,cost_usd,role,portfolio,timeout,run_seconds,visible_seconds,list_calls,listed_shipments,unique_db_targets,unique_live_targets,carrier_429_attempts,cache_source,source_question_id,source_user_id,source_stop_reason
+Q00014,2026-08-10T01:04:51.625Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,213,213,0,team_lead,True,False,0.213,0.213,0,,0,0,0,same_user,Q00003,U07,step_cap
+Q00015,2026-08-10T01:05:09.361Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,118,118,0,team_lead,True,False,0.118,0.118,0,,0,0,0,same_user,Q00006,U07,step_cap
+Q00016,2026-08-10T01:05:20.088Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,173,173,0,team_lead,True,False,0.173,0.173,0,,0,0,0,same_user,Q00004,U07,step_cap
+Q00017,2026-08-10T01:05:33.212Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,175,175,0,team_lead,True,False,0.175,0.175,0,,0,0,0,same_user,Q00012,U07,step_cap
+Q00018,2026-08-10T01:05:44.085Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,96,96,0,team_lead,True,False,0.096,0.096,0,,0,0,0,same_user,Q00007,U07,step_cap
+Q00019,2026-08-10T01:05:54.571Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,192,192,0,team_lead,True,False,0.192,0.192,0,,0,0,0,same_user,Q00010,U07,step_cap
+Q00031,2026-08-10T01:46:54.542Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,99,99,0,team_lead,True,False,0.099,0.099,0,,0,0,0,same_user,Q00029,U07,step_cap
+Q00032,2026-08-10T01:49:33.649Z,U13,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,198,198,0,operator,True,False,0.198,0.198,0,,0,0,0,different_user,Q00009,U07,step_cap
+Q00048,2026-08-10T02:32:32.115Z,U17,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,99,99,0,operator,True,False,0.099,0.099,0,,0,0,0,different_user,Q00004,U07,step_cap
+Q00052,2026-08-10T02:50:30.868Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,98,98,0,team_lead,True,False,0.098,0.098,0,,0,0,0,same_user,Q00003,U07,step_cap
+Q00062,2026-08-10T03:09:43.897Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,162,162,0,team_lead,True,False,0.162,0.162,0,,0,0,0,same_user,Q00003,U07,step_cap
+Q00069,2026-08-10T03:35:31.094Z,U02,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,172,172,0,operator,True,False,0.172,0.172,0,,0,0,0,different_user,Q00012,U07,step_cap
+Q00072,2026-08-10T03:43:23.018Z,U23,status of KSTU5276741 pls,07c6526501da,1,200,cache,0,0,0,0,0,135,135,0,operator,False,False,0.135,0.135,0,,0,0,0,different_user,Q00064,U07,answered
+Q00075,2026-08-10T03:54:45.312Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,145,145,0,team_lead,True,False,0.145,0.145,0,,0,0,0,same_user,Q00003,U07,step_cap
+Q00083,2026-08-10T05:17:47.583Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,139,139,0,team_lead,True,False,0.139,0.139,0,,0,0,0,same_user,Q00012,U07,step_cap
+Q00115,2026-08-10T09:01:10.024Z,U10,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,106,106,0,operator,True,False,0.106,0.106,0,,0,0,0,different_user,Q00003,U07,step_cap
+Q00123,2026-08-10T09:46:02.096Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,159,159,0,team_lead,True,False,0.159,0.159,0,,0,0,0,same_user,Q00004,U07,step_cap
+Q00124,2026-08-10T09:52:00.307Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,98,98,0,team_lead,True,False,0.098,0.098,0,,0,0,0,same_user,Q00012,U07,step_cap
+Q00131,2026-08-10T10:59:53.108Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,171,171,0,team_lead,True,False,0.171,0.171,0,,0,0,0,same_user,Q00012,U07,step_cap
+Q00132,2026-08-11T00:02:51.699Z,U19,Latest on ORBU4199138?,0a81e8592941,1,200,cache,0,0,0,0,0,143,143,0,operator,False,False,0.143,0.143,0,,0,0,0,same_user,Q00068,U19,answered
+Q00138,2026-08-11T00:50:26.963Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,104,104,0,team_lead,True,False,0.104,0.104,0,,0,0,0,same_user,Q00012,U07,step_cap
+Q00139,2026-08-11T00:59:40.145Z,U11,Where is CBTU8950025?,6fd322d83f87,1,200,cache,0,0,0,0,0,209,209,0,operator,False,False,0.209,0.209,0,,0,0,0,different_user,Q00108,U07,answered
+Q00143,2026-08-11T01:08:08.142Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,108,108,0,team_lead,True,False,0.108,0.108,0,,0,0,0,same_user,Q00029,U07,step_cap
+Q00154,2026-08-11T01:39:16.935Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,180,180,0,team_lead,True,False,0.18,0.18,0,,0,0,0,same_user,Q00153,U07,step_cap
+Q00161,2026-08-11T02:05:17.531Z,U38,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,170,170,0,operator,True,False,0.17,0.17,0,,0,0,0,same_user,Q00160,U38,answered
+Q00165,2026-08-11T02:13:38.080Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,124,124,0,team_lead,True,False,0.124,0.124,0,,0,0,0,different_user,Q00160,U38,answered
+Q00168,2026-08-11T02:20:36.271Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,158,158,0,team_lead,True,False,0.158,0.158,0,,0,0,0,same_user,Q00153,U07,step_cap
+Q00171,2026-08-11T02:28:04.340Z,U18,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,184,184,0,operator,True,False,0.184,0.184,0,,0,0,0,different_user,Q00158,U30,answered
+Q00177,2026-08-11T02:36:36.919Z,U30,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,121,121,0,operator,True,False,0.121,0.121,0,,0,0,0,different_user,Q00160,U38,answered
+Q00189,2026-08-11T03:41:51.776Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,185,185,0,team_lead,True,False,0.185,0.185,0,,0,0,0,same_user,Q00188,U07,step_cap
+Q00198,2026-08-11T05:39:31.894Z,U17,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,147,147,0,operator,True,False,0.147,0.147,0,,0,0,0,different_user,Q00153,U07,step_cap
+Q00200,2026-08-11T05:44:36.218Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,210,210,0,team_lead,True,False,0.21,0.21,0,,0,0,0,same_user,Q00199,U07,step_cap
+Q00201,2026-08-11T05:50:22.464Z,U32,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,181,181,0,operator,True,False,0.181,0.181,0,,0,0,0,different_user,Q00144,U40,answered
+Q00203,2026-08-11T05:55:03.017Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,199,199,0,team_lead,True,False,0.199,0.199,0,,0,0,0,different_user,Q00144,U40,answered
+Q00223,2026-08-11T07:09:06.940Z,U30,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,117,117,0,operator,True,False,0.117,0.117,0,,0,0,0,different_user,Q00144,U40,answered
+Q00239,2026-08-11T09:38:28.654Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,172,172,0,team_lead,True,False,0.172,0.172,0,,0,0,0,same_user,Q00238,U07,step_cap
+Q00240,2026-08-12T00:35:55.656Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,152,152,0,team_lead,True,False,0.152,0.152,0,,0,0,0,same_user,Q00153,U07,step_cap
+Q00242,2026-08-12T00:45:11.144Z,U04,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,176,176,0,operator,True,False,0.176,0.176,0,,0,0,0,different_user,Q00199,U07,step_cap
+Q00248,2026-08-12T01:16:16.226Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,93,93,0,team_lead,True,False,0.093,0.093,0,,0,0,0,different_user,Q00160,U38,answered
+Q00254,2026-08-12T01:28:10.201Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,141,141,0,team_lead,True,False,0.141,0.141,0,,0,0,0,same_user,Q00253,U07,step_cap
+Q00268,2026-08-12T02:23:16.435Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,159,159,0,team_lead,True,False,0.159,0.159,0,,0,0,0,same_user,Q00265,U07,step_cap
+Q00272,2026-08-12T02:36:13.787Z,U18,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,123,123,0,operator,True,False,0.123,0.123,0,,0,0,0,different_user,Q00188,U07,step_cap
+Q00276,2026-08-12T02:56:57.822Z,U11,where is CBTU4442978,d3f3756acade,1,200,cache,0,0,0,0,0,190,190,0,operator,False,False,0.19,0.19,0,,0,0,0,same_user,Q00215,U11,answered
+Q00299,2026-08-12T06:31:21.308Z,U01,Latest on SNDU4059205?,6189ebe8cfc2,1,200,cache,0,0,0,0,0,113,113,0,operator,False,False,0.113,0.113,0,,0,0,0,same_user,Q00246,U01,answered
+Q00313,2026-08-12T07:23:40.191Z,U36,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,113,113,0,operator,True,False,0.113,0.113,0,,0,0,0,different_user,Q00253,U07,step_cap
+Q00331,2026-08-12T09:39:55.377Z,U07,Latest on ORBU1486206?,d8b3e4ad5a9c,1,200,cache,0,0,0,0,0,104,104,0,team_lead,False,False,0.104,0.104,0,,0,0,0,different_user,Q00323,U03,answered
+Q00344,2026-08-13T01:09:13.951Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,210,210,0,team_lead,True,False,0.21,0.21,0,,0,0,0,different_user,Q00317,U18,answered
+Q00345,2026-08-13T01:14:18.963Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,219,219,0,team_lead,True,False,0.219,0.219,0,,0,0,0,same_user,Q00265,U07,step_cap
+Q00346,2026-08-13T01:14:20.151Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,124,124,0,team_lead,True,False,0.124,0.124,0,,0,0,0,same_user,Q00265,U07,step_cap
+Q00347,2026-08-13T01:21:16.526Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,180,180,0,team_lead,True,False,0.18,0.18,0,,0,0,0,same_user,Q00322,U07,step_cap
+Q00374,2026-08-13T04:10:25.741Z,U15,Where is CBTU5364912?,0acc7c818f6e,1,200,cache,0,0,0,0,0,99,99,0,operator,False,False,0.099,0.099,0,,0,0,0,same_user,Q00350,U15,answered
+Q00388,2026-08-13T06:06:42.774Z,U06,Where is KSTU3708950?,ec81d35d246c,1,200,cache,0,0,0,0,0,180,180,0,operator,False,False,0.18,0.18,0,,0,0,0,same_user,Q00318,U06,answered
+Q00398,2026-08-13T06:32:18.263Z,U10,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,157,157,0,operator,True,False,0.157,0.157,0,,0,0,0,different_user,Q00322,U07,step_cap
+Q00400,2026-08-13T06:42:17.621Z,U37,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,200,200,0,operator,True,False,0.2,0.2,0,,0,0,0,different_user,Q00360,U13,answered
+Q00419,2026-08-13T08:22:03.817Z,U22,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,185,185,0,operator,True,False,0.185,0.185,0,,0,0,0,different_user,Q00373,U08,answered
+Q00421,2026-08-13T08:35:23.698Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,172,172,0,team_lead,True,False,0.172,0.172,0,,0,0,0,same_user,Q00420,U07,step_cap
+Q00433,2026-08-13T10:39:14.465Z,U09,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,146,146,0,operator,True,False,0.146,0.146,0,,0,0,0,different_user,Q00360,U13,answered
+Q00436,2026-08-14T00:40:32.837Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,205,205,0,team_lead,True,False,0.205,0.205,0,,0,0,0,different_user,Q00385,U25,answered
+Q00460,2026-08-14T03:52:07.274Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,201,201,0,team_lead,True,False,0.201,0.201,0,,0,0,0,same_user,Q00459,U07,step_cap
+Q00464,2026-08-14T04:11:18.216Z,U03,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,185,185,0,operator,True,False,0.185,0.185,0,,0,0,0,different_user,Q00385,U25,answered
+Q00465,2026-08-14T04:53:55.193Z,U15,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,110,110,0,operator,True,False,0.11,0.11,0,,0,0,0,different_user,Q00420,U07,step_cap
+Q00471,2026-08-14T06:24:26.600Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,196,196,0,team_lead,True,False,0.196,0.196,0,,0,0,0,same_user,Q00469,U07,step_cap
+Q00476,2026-08-14T07:05:16.298Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,94,94,0,team_lead,True,False,0.094,0.094,0,,0,0,0,same_user,Q00469,U07,step_cap
+Q00486,2026-08-14T07:48:07.179Z,U03,where is SNDU6530860,c22c270a88fe,1,200,cache,0,0,0,0,0,219,219,0,operator,False,False,0.219,0.219,0,,0,0,0,same_user,Q00429,U03,answered
+Q00493,2026-08-14T08:19:58.853Z,U01,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,136,136,0,operator,True,False,0.136,0.136,0,,0,0,0,different_user,Q00469,U07,step_cap
+Q00498,2026-08-14T08:31:37.175Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,197,197,0,team_lead,True,False,0.197,0.197,0,,0,0,0,same_user,Q00497,U07,step_cap
+Q00504,2026-08-14T08:58:35.139Z,U07,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,185,185,0,team_lead,True,False,0.185,0.185,0,,0,0,0,same_user,Q00503,U07,step_cap
+Q00505,2026-08-14T09:05:22.530Z,U40,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,173,173,0,operator,True,False,0.173,0.173,0,,0,0,0,different_user,Q00469,U07,step_cap
+Q00507,2026-08-14T10:43:41.024Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,153,153,0,team_lead,True,False,0.153,0.153,0,,0,0,0,same_user,Q00497,U07,step_cap
+Q00527,2026-08-17T01:04:47.753Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,140,140,0,team_lead,True,False,0.14,0.14,0,,0,0,0,same_user,Q00519,U07,step_cap
+Q00530,2026-08-17T01:05:27.521Z,U07,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,196,196,0,team_lead,True,False,0.196,0.196,0,,0,0,0,same_user,Q00520,U07,step_cap
+Q00531,2026-08-17T01:06:00.222Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,135,135,0,team_lead,True,False,0.135,0.135,0,,0,0,0,same_user,Q00518,U07,step_cap
+Q00532,2026-08-17T01:06:06.983Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,170,170,0,team_lead,True,False,0.17,0.17,0,,0,0,0,same_user,Q00523,U07,step_cap
+Q00533,2026-08-17T01:06:09.504Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,186,186,0,team_lead,True,False,0.186,0.186,0,,0,0,0,same_user,Q00522,U07,step_cap
+Q00534,2026-08-17T01:06:10.150Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,147,147,0,team_lead,True,False,0.147,0.147,0,,0,0,0,same_user,Q00521,U07,step_cap
+Q00535,2026-08-17T01:06:12.738Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,111,111,0,team_lead,True,False,0.111,0.111,0,,0,0,0,same_user,Q00526,U07,step_cap
+Q00536,2026-08-17T01:06:51.039Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,99,99,0,team_lead,True,False,0.099,0.099,0,,0,0,0,same_user,Q00524,U07,step_cap
+Q00540,2026-08-17T01:25:55.026Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,181,181,0,team_lead,True,False,0.181,0.181,0,,0,0,0,same_user,Q00524,U07,step_cap
+Q00545,2026-08-17T01:57:22.224Z,U31,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,210,210,0,operator,True,False,0.21,0.21,0,,0,0,0,different_user,Q00518,U07,step_cap
+Q00556,2026-08-17T02:46:26.330Z,U07,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,148,148,0,team_lead,True,False,0.148,0.148,0,,0,0,0,same_user,Q00520,U07,step_cap
+Q00562,2026-08-17T03:20:07.871Z,U07,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,154,154,0,team_lead,True,False,0.154,0.154,0,,0,0,0,same_user,Q00520,U07,step_cap
+Q00563,2026-08-17T03:30:11.129Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,126,126,0,team_lead,True,False,0.126,0.126,0,,0,0,0,same_user,Q00518,U07,step_cap
+Q00573,2026-08-17T04:25:40.132Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,180,180,0,team_lead,True,False,0.18,0.18,0,,0,0,0,same_user,Q00518,U07,step_cap
+Q00577,2026-08-17T05:21:32.398Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,212,212,0,team_lead,True,False,0.212,0.212,0,,0,0,0,same_user,Q00526,U07,step_cap
+Q00578,2026-08-17T05:40:12.735Z,U13,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,108,108,0,operator,True,False,0.108,0.108,0,,0,0,0,different_user,Q00518,U07,step_cap
+Q00580,2026-08-17T05:59:17.444Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,220,220,0,team_lead,True,False,0.22,0.22,0,,0,0,0,same_user,Q00518,U07,step_cap
+Q00583,2026-08-17T06:18:01.012Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,121,121,0,team_lead,True,False,0.121,0.121,0,,0,0,0,same_user,Q00524,U07,step_cap
+Q00593,2026-08-17T08:36:46.306Z,U06,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,201,201,0,operator,True,False,0.201,0.201,0,,0,0,0,different_user,Q00523,U07,step_cap
+Q00595,2026-08-17T09:16:02.827Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,104,104,0,team_lead,True,False,0.104,0.104,0,,0,0,0,same_user,Q00519,U07,step_cap
+Q00611,2026-08-18T01:30:55.922Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,219,219,0,team_lead,True,False,0.219,0.219,0,,0,0,0,same_user,Q00610,U07,step_cap
+Q00616,2026-08-18T01:38:32.603Z,U16,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,179,179,0,operator,True,False,0.179,0.179,0,,0,0,0,different_user,Q00610,U07,step_cap
+Q00623,2026-08-18T03:00:06.843Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,153,153,0,team_lead,True,False,0.153,0.153,0,,0,0,0,same_user,Q00610,U07,step_cap
+Q00630,2026-08-18T04:38:28.499Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,167,167,0,team_lead,True,False,0.167,0.167,0,,0,0,0,same_user,Q00629,U07,step_cap
+Q00635,2026-08-18T05:36:06.688Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,183,183,0,team_lead,True,False,0.183,0.183,0,,0,0,0,same_user,Q00634,U07,step_cap
+Q00637,2026-08-18T06:04:13.722Z,U31,Any update on QVRU2789766?,6263cd4be59b,1,200,cache,0,0,0,0,0,158,158,0,operator,False,False,0.158,0.158,0,,0,0,0,same_user,Q00587,U31,answered
+Q00644,2026-08-18T06:38:02.987Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,137,137,0,team_lead,True,False,0.137,0.137,0,,0,0,0,same_user,Q00642,U07,step_cap
+Q00654,2026-08-18T07:40:41.353Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,132,132,0,team_lead,True,False,0.132,0.132,0,,0,0,0,different_user,Q00625,U13,answered
+Q00662,2026-08-19T01:12:21.420Z,U06,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,160,160,0,operator,True,False,0.16,0.16,0,,0,0,0,different_user,Q00610,U07,step_cap
+Q00684,2026-08-19T03:50:39.132Z,U09,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,95,95,0,operator,True,False,0.095,0.095,0,,0,0,0,different_user,Q00634,U07,step_cap
+Q00687,2026-08-19T04:04:04.351Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,164,164,0,team_lead,True,False,0.164,0.164,0,,0,0,0,same_user,Q00686,U07,step_cap
+Q00697,2026-08-19T05:51:45.039Z,U15,Any update on KSTU3864924?,7b9e77e353ef,1,200,cache,0,0,0,0,0,161,161,0,operator,False,False,0.161,0.161,0,,0,0,0,different_user,Q00639,U07,answered
+Q00701,2026-08-19T06:16:35.596Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,120,120,0,team_lead,True,False,0.12,0.12,0,,0,0,0,same_user,Q00686,U07,step_cap
+Q00704,2026-08-19T06:30:19.307Z,U07,where is KSTU3670703,9b1f0e7f67f9,1,200,cache,0,0,0,0,0,213,213,0,team_lead,False,False,0.213,0.213,0,,0,0,0,different_user,Q00663,U31,answered
+Q00707,2026-08-19T06:42:04.307Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,93,93,0,team_lead,True,False,0.093,0.093,0,,0,0,0,same_user,Q00686,U07,step_cap
+Q00720,2026-08-19T08:01:47.222Z,U39,When did SNDU9123047 load?,59c70fbe1e10,1,200,cache,0,0,0,0,0,151,151,0,operator,False,False,0.151,0.151,0,,0,0,0,different_user,Q00714,U07,answered
+Q00727,2026-08-19T08:24:33.614Z,U31,where is KSTU3670703,9b1f0e7f67f9,1,200,cache,0,0,0,0,0,105,105,0,operator,False,False,0.105,0.105,0,,0,0,0,same_user,Q00663,U31,answered
+Q00732,2026-08-19T09:01:27.458Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,92,92,0,team_lead,True,False,0.092,0.092,0,,0,0,0,same_user,Q00731,U07,step_cap
+Q00733,2026-08-19T09:08:20.176Z,U23,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,108,108,0,operator,True,False,0.108,0.108,0,,0,0,0,different_user,Q00731,U07,step_cap
+Q00741,2026-08-20T01:06:54.937Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,216,216,0,team_lead,True,False,0.216,0.216,0,,0,0,0,same_user,Q00731,U07,step_cap
+Q00749,2026-08-20T01:28:43.133Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,194,194,0,team_lead,True,False,0.194,0.194,0,,0,0,0,different_user,Q00702,U31,answered
+Q00755,2026-08-20T02:12:24.748Z,U15,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,148,148,0,operator,True,False,0.148,0.148,0,,0,0,0,different_user,Q00686,U07,step_cap
+Q00762,2026-08-20T03:08:09.715Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,191,191,0,team_lead,True,False,0.191,0.191,0,,0,0,0,same_user,Q00686,U07,step_cap
+Q00769,2026-08-20T04:53:16.593Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,153,153,0,team_lead,True,False,0.153,0.153,0,,0,0,0,same_user,Q00731,U07,step_cap
+Q00770,2026-08-20T05:08:55.826Z,U13,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,176,176,0,operator,True,False,0.176,0.176,0,,0,0,0,different_user,Q00702,U31,answered
+Q00780,2026-08-20T06:27:37.608Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,186,186,0,team_lead,True,False,0.186,0.186,0,,0,0,0,same_user,Q00731,U07,step_cap
+Q00781,2026-08-20T06:30:21.748Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,146,146,0,team_lead,True,False,0.146,0.146,0,,0,0,0,same_user,Q00731,U07,step_cap
+Q00797,2026-08-20T09:24:08.057Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,189,189,0,team_lead,True,False,0.189,0.189,0,,0,0,0,same_user,Q00796,U07,step_cap
+Q00807,2026-08-21T01:22:23.666Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,121,121,0,team_lead,True,False,0.121,0.121,0,,0,0,0,same_user,Q00796,U07,step_cap
+Q00811,2026-08-21T01:51:36.076Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,112,112,0,team_lead,True,False,0.112,0.112,0,,0,0,0,different_user,Q00792,U15,answered
+Q00815,2026-08-21T02:03:22.597Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,128,128,0,team_lead,True,False,0.128,0.128,0,,0,0,0,same_user,Q00814,U07,step_cap
+Q00824,2026-08-21T02:44:15.429Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,94,94,0,team_lead,True,False,0.094,0.094,0,,0,0,0,same_user,Q00796,U07,step_cap
+Q00848,2026-08-21T06:27:10.526Z,U15,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,165,165,0,operator,True,False,0.165,0.165,0,,0,0,0,same_user,Q00792,U15,answered
+Q00878,2026-08-24T01:03:30.713Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,104,104,0,team_lead,True,False,0.104,0.104,0,,0,0,0,same_user,Q00869,U07,step_cap
+Q00879,2026-08-24T01:03:41.837Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,119,119,0,team_lead,True,False,0.119,0.119,0,,0,0,0,same_user,Q00870,U07,step_cap
+Q00881,2026-08-24T01:04:03.474Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,165,165,0,team_lead,True,False,0.165,0.165,0,,0,0,0,same_user,Q00874,U07,step_cap
+Q00882,2026-08-24T01:04:38.689Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,190,190,0,team_lead,True,False,0.19,0.19,0,,0,0,0,same_user,Q00877,U07,step_cap
+Q00883,2026-08-24T01:05:19.589Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,207,207,0,team_lead,True,False,0.207,0.207,0,,0,0,0,same_user,Q00872,U07,step_cap
+Q00884,2026-08-24T01:05:39.906Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,124,124,0,team_lead,True,False,0.124,0.124,0,,0,0,0,same_user,Q00876,U07,step_cap
+Q00885,2026-08-24T01:05:58.563Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,162,162,0,team_lead,True,False,0.162,0.162,0,,0,0,0,same_user,Q00880,U07,step_cap
+Q00887,2026-08-24T01:12:37.385Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,110,110,0,team_lead,True,False,0.11,0.11,0,,0,0,0,same_user,Q00876,U07,step_cap
+Q00892,2026-08-24T01:46:46.348Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,111,111,0,team_lead,True,False,0.111,0.111,0,,0,0,0,same_user,Q00869,U07,step_cap
+Q00903,2026-08-24T03:34:38.621Z,U17,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,204,204,0,operator,True,False,0.204,0.204,0,,0,0,0,different_user,Q00869,U07,step_cap
+Q00909,2026-08-24T04:58:02.932Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,136,136,0,team_lead,True,False,0.136,0.136,0,,0,0,0,same_user,Q00869,U07,step_cap
+Q00910,2026-08-24T05:21:24.786Z,U15,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,166,166,0,operator,True,False,0.166,0.166,0,,0,0,0,different_user,Q00869,U07,step_cap
+Q00919,2026-08-24T06:17:01.078Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,194,194,0,team_lead,True,False,0.194,0.194,0,,0,0,0,same_user,Q00869,U07,step_cap
+Q00922,2026-08-24T06:54:52.355Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,209,209,0,team_lead,True,False,0.209,0.209,0,,0,0,0,same_user,Q00876,U07,step_cap
+Q00923,2026-08-24T07:25:24.773Z,U07,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,92,92,0,team_lead,True,False,0.092,0.092,0,,0,0,0,same_user,Q00871,U07,step_cap
+Q00924,2026-08-24T07:42:45.749Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,203,203,0,team_lead,True,False,0.203,0.203,0,,0,0,0,same_user,Q00869,U07,step_cap
+Q00933,2026-08-25T01:11:01.807Z,U31,where is ZNTU2305306,41ea4272f261,1,200,cache,0,0,0,0,0,183,183,0,operator,False,False,0.183,0.183,0,,0,0,0,same_user,Q00904,U31,answered
+Q00946,2026-08-25T02:24:00.567Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,184,184,0,team_lead,True,False,0.184,0.184,0,,0,0,0,same_user,Q00945,U07,step_cap
+Q00951,2026-08-25T02:50:20.300Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,188,188,0,team_lead,True,False,0.188,0.188,0,,0,0,0,same_user,Q00950,U07,step_cap
+Q00953,2026-08-25T02:55:31.673Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,205,205,0,team_lead,True,False,0.205,0.205,0,,0,0,0,same_user,Q00952,U07,step_cap
+Q00954,2026-08-25T02:56:14.920Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,119,119,0,team_lead,True,False,0.119,0.119,0,,0,0,0,same_user,Q00950,U07,step_cap
+Q00969,2026-08-25T08:16:58.713Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,117,117,0,team_lead,True,False,0.117,0.117,0,,0,0,0,same_user,Q00945,U07,step_cap
+Q00977,2026-08-26T01:21:21.873Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,171,171,0,team_lead,True,False,0.171,0.171,0,,0,0,0,same_user,Q00945,U07,step_cap
+Q00980,2026-08-26T01:44:57.115Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,123,123,0,team_lead,True,False,0.123,0.123,0,,0,0,0,same_user,Q00964,U07,step_cap
+Q00982,2026-08-26T02:11:13.359Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,102,102,0,team_lead,True,False,0.102,0.102,0,,0,0,0,same_user,Q00945,U07,step_cap
+Q00983,2026-08-26T02:25:56.076Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,154,154,0,team_lead,True,False,0.154,0.154,0,,0,0,0,same_user,Q00964,U07,step_cap
+Q00990,2026-08-26T02:56:45.383Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,169,169,0,team_lead,True,False,0.169,0.169,0,,0,0,0,same_user,Q00989,U07,step_cap
+Q00992,2026-08-26T03:53:38.427Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,103,103,0,team_lead,True,False,0.103,0.103,0,,0,0,0,different_user,Q00986,U13,answered
+Q00993,2026-08-26T04:00:47.372Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,198,198,0,team_lead,True,False,0.198,0.198,0,,0,0,0,same_user,Q00964,U07,step_cap
+Q00994,2026-08-26T04:02:35.982Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,192,192,0,team_lead,True,False,0.192,0.192,0,,0,0,0,same_user,Q00989,U07,step_cap
+Q01004,2026-08-26T06:30:33.675Z,U03,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,98,98,0,operator,True,False,0.098,0.098,0,,0,0,0,different_user,Q00968,U07,step_cap
+Q01005,2026-08-26T06:42:42.317Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,129,129,0,team_lead,True,False,0.129,0.129,0,,0,0,0,same_user,Q00968,U07,step_cap
+Q01006,2026-08-26T06:48:37.296Z,U13,Where is ZNTU9156086?,a99febd83603,1,200,cache,0,0,0,0,0,117,117,0,operator,False,False,0.117,0.117,0,,0,0,0,same_user,Q00985,U13,answered
+Q01012,2026-08-26T08:43:00.594Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,133,133,0,team_lead,True,False,0.133,0.133,0,,0,0,0,same_user,Q01011,U07,step_cap
+Q01018,2026-08-27T01:05:14.104Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,175,175,0,team_lead,True,False,0.175,0.175,0,,0,0,0,same_user,Q01017,U07,step_cap
+Q01030,2026-08-27T02:12:54.373Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,178,178,0,team_lead,True,False,0.178,0.178,0,,0,0,0,same_user,Q01017,U07,step_cap
+Q01031,2026-08-27T02:13:00.813Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,124,124,0,team_lead,True,False,0.124,0.124,0,,0,0,0,same_user,Q01017,U07,step_cap
+Q01037,2026-08-27T02:53:19.955Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,130,130,0,team_lead,True,False,0.13,0.13,0,,0,0,0,same_user,Q01036,U07,step_cap
+Q01040,2026-08-27T03:43:42.124Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,180,180,0,team_lead,True,False,0.18,0.18,0,,0,0,0,same_user,Q01039,U07,step_cap
+Q01043,2026-08-27T04:46:05.082Z,U31,When did KSTU3670703 load?,01c2a2af0f3a,1,200,cache,0,0,0,0,0,117,117,0,operator,False,False,0.117,0.117,0,,0,0,0,same_user,Q01015,U31,answered
+Q01049,2026-08-27T05:27:26.059Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,116,116,0,team_lead,True,False,0.116,0.116,0,,0,0,0,same_user,Q01048,U07,step_cap
+Q01050,2026-08-27T05:38:28.401Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,102,102,0,team_lead,True,False,0.102,0.102,0,,0,0,0,same_user,Q01036,U07,step_cap
+Q01052,2026-08-27T06:03:14.978Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,117,117,0,team_lead,True,False,0.117,0.117,0,,0,0,0,same_user,Q01051,U07,step_cap
+Q01054,2026-08-27T06:17:21.683Z,U06,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,109,109,0,operator,True,False,0.109,0.109,0,,0,0,0,different_user,Q01011,U07,step_cap
+Q01063,2026-08-27T07:04:58.390Z,U31,Who is the notify party on BK882396?,503078632953,1,200,cache,0,0,0,0,0,150,150,0,operator,False,False,0.15,0.15,0,,0,0,0,same_user,Q01007,U31,answered
+Q01069,2026-08-27T08:02:17.078Z,U11,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,162,162,0,operator,True,False,0.162,0.162,0,,0,0,0,different_user,Q01051,U07,step_cap
+Q01074,2026-08-27T08:58:19.126Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,160,160,0,team_lead,True,False,0.16,0.16,0,,0,0,0,same_user,Q01017,U07,step_cap
+Q01077,2026-08-27T09:24:46.933Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,152,152,0,team_lead,True,False,0.152,0.152,0,,0,0,0,same_user,Q01076,U07,step_cap
+Q01080,2026-08-27T10:15:34.805Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,180,180,0,team_lead,True,False,0.18,0.18,0,,0,0,0,same_user,Q01048,U07,step_cap
+Q01088,2026-08-28T01:21:01.768Z,U06,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,209,209,0,operator,True,False,0.209,0.209,0,,0,0,0,different_user,Q01036,U07,step_cap
+Q01095,2026-08-28T01:55:17.478Z,U11,What's happening with BK145915?,e582b6559d39,1,200,cache,0,0,0,0,0,131,131,0,operator,False,False,0.131,0.131,0,,0,0,0,same_user,Q01071,U11,answered
+Q01099,2026-08-28T03:16:23.213Z,U07,where is KSTU9535313,bd4f7534aa65,1,200,cache,0,0,0,0,0,212,212,0,team_lead,False,False,0.212,0.212,0,,0,0,0,different_user,Q01061,U13,answered
+Q01105,2026-08-28T04:29:57.863Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,203,203,0,team_lead,True,False,0.203,0.203,0,,0,0,0,same_user,Q01096,U07,step_cap
+Q01109,2026-08-28T05:46:54.152Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,133,133,0,team_lead,True,False,0.133,0.133,0,,0,0,0,same_user,Q01051,U07,step_cap
+Q01121,2026-08-28T08:33:47.051Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,212,212,0,team_lead,True,False,0.212,0.212,0,,0,0,0,same_user,Q01096,U07,step_cap
+Q01123,2026-08-28T08:58:27.343Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,134,134,0,team_lead,True,False,0.134,0.134,0,,0,0,0,same_user,Q01096,U07,step_cap
+Q01142,2026-08-31T01:01:19.063Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,148,148,0,team_lead,True,False,0.148,0.148,0,,0,0,0,same_user,Q01134,U07,step_cap
+Q01143,2026-08-31T01:01:44.951Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,148,148,0,team_lead,True,False,0.148,0.148,0,,0,0,0,same_user,Q01133,U07,step_cap
+Q01144,2026-08-31T01:02:00.808Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,199,199,0,team_lead,True,False,0.199,0.199,0,,0,0,0,same_user,Q01139,U07,step_cap
+Q01145,2026-08-31T01:02:08.831Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,203,203,0,team_lead,True,False,0.203,0.203,0,,0,0,0,same_user,Q01138,U07,step_cap
+Q01146,2026-08-31T01:02:13.024Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,197,197,0,team_lead,True,False,0.197,0.197,0,,0,0,0,same_user,Q01137,U07,step_cap
+Q01147,2026-08-31T01:02:51.352Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,196,196,0,team_lead,True,False,0.196,0.196,0,,0,0,0,same_user,Q01141,U07,step_cap
+Q01148,2026-08-31T01:02:53.720Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,219,219,0,team_lead,True,False,0.219,0.219,0,,0,0,0,same_user,Q01140,U07,step_cap
+Q01151,2026-08-31T01:08:26.036Z,U11,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,131,131,0,operator,True,False,0.131,0.131,0,,0,0,0,different_user,Q01133,U07,step_cap
+Q01153,2026-08-31T01:30:52.688Z,U11,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,128,128,0,operator,True,False,0.128,0.128,0,,0,0,0,different_user,Q01133,U07,step_cap
+Q01157,2026-08-31T02:00:17.208Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,114,114,0,team_lead,True,False,0.114,0.114,0,,0,0,0,same_user,Q01133,U07,step_cap
+Q01161,2026-08-31T02:11:19.814Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,209,209,0,team_lead,True,False,0.209,0.209,0,,0,0,0,same_user,Q01133,U07,step_cap
+Q01162,2026-08-31T02:31:44.336Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,121,121,0,team_lead,True,False,0.121,0.121,0,,0,0,0,same_user,Q01140,U07,step_cap
+Q01178,2026-08-31T05:55:45.717Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,131,131,0,team_lead,True,False,0.131,0.131,0,,0,0,0,same_user,Q01140,U07,step_cap
+Q01180,2026-08-31T06:03:55.883Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,119,119,0,team_lead,True,False,0.119,0.119,0,,0,0,0,same_user,Q01133,U07,step_cap
+Q01182,2026-08-31T06:09:54.990Z,U31,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,144,144,0,operator,True,False,0.144,0.144,0,,0,0,0,different_user,Q01140,U07,step_cap
+Q01183,2026-08-31T06:11:42.154Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,123,123,0,team_lead,True,False,0.123,0.123,0,,0,0,0,same_user,Q01141,U07,step_cap
+Q01201,2026-08-31T08:24:55.053Z,U15,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,191,191,0,operator,True,False,0.191,0.191,0,,0,0,0,different_user,Q01140,U07,step_cap
+Q01205,2026-08-31T08:47:15.810Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,114,114,0,team_lead,True,False,0.114,0.114,0,,0,0,0,same_user,Q01141,U07,step_cap
+Q01212,2026-08-31T09:56:53.529Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,126,126,0,team_lead,True,False,0.126,0.126,0,,0,0,0,same_user,Q01133,U07,step_cap
+Q01215,2026-09-01T00:48:12.518Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,201,201,0,team_lead,True,False,0.201,0.201,0,,0,0,0,same_user,Q01140,U07,step_cap
+Q01227,2026-09-01T01:54:57.896Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,93,93,0,team_lead,True,False,0.093,0.093,0,,0,0,0,same_user,Q01225,U07,step_cap
+Q01233,2026-09-01T02:42:42.805Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,165,165,0,team_lead,True,False,0.165,0.165,0,,0,0,0,same_user,Q01232,U07,step_cap
+Q01239,2026-09-01T03:20:39.022Z,U13,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,193,193,0,operator,True,False,0.193,0.193,0,,0,0,0,different_user,Q01225,U07,step_cap
+Q01247,2026-09-01T06:17:32.156Z,U31,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,162,162,0,operator,True,False,0.162,0.162,0,,0,0,0,different_user,Q01225,U07,step_cap
+Q01248,2026-09-01T06:20:34.940Z,U07,Any update on ZNTU2305306?,c04947354f3b,1,200,cache,0,0,0,0,0,124,124,0,team_lead,False,False,0.124,0.124,0,,0,0,0,different_user,Q01211,U31,answered
+Q01256,2026-09-01T08:05:56.727Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,173,173,0,team_lead,True,False,0.173,0.173,0,,0,0,0,same_user,Q01232,U07,step_cap
+Q01261,2026-09-01T08:45:33.356Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,204,204,0,team_lead,True,False,0.204,0.204,0,,0,0,0,same_user,Q01260,U07,step_cap
+Q01263,2026-09-01T08:49:46.565Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,111,111,0,team_lead,True,False,0.111,0.111,0,,0,0,0,same_user,Q01225,U07,step_cap
+Q01265,2026-09-02T00:02:34.392Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,125,125,0,team_lead,True,False,0.125,0.125,0,,0,0,0,same_user,Q01260,U07,step_cap
+Q01282,2026-09-02T02:26:55.250Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,99,99,0,team_lead,True,False,0.099,0.099,0,,0,0,0,same_user,Q01232,U07,step_cap
+Q01294,2026-09-02T03:44:43.259Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,142,142,0,team_lead,True,False,0.142,0.142,0,,0,0,0,same_user,Q01293,U07,step_cap
+Q01305,2026-09-02T07:03:33.232Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,96,96,0,team_lead,True,False,0.096,0.096,0,,0,0,0,same_user,Q01304,U07,step_cap
+Q01319,2026-09-02T08:50:00.651Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,181,181,0,team_lead,True,False,0.181,0.181,0,,0,0,0,same_user,Q01304,U07,step_cap
+Q01322,2026-09-02T09:34:55.393Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,102,102,0,team_lead,True,False,0.102,0.102,0,,0,0,0,same_user,Q01321,U07,step_cap
+Q01324,2026-09-02T09:44:08.969Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,111,111,0,team_lead,True,False,0.111,0.111,0,,0,0,0,same_user,Q01323,U07,step_cap
+Q01326,2026-09-02T10:28:05.383Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,116,116,0,team_lead,True,False,0.116,0.116,0,,0,0,0,same_user,Q01293,U07,step_cap
+Q01333,2026-09-03T01:36:06.500Z,U03,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,110,110,0,operator,True,False,0.11,0.11,0,,0,0,0,different_user,Q01293,U07,step_cap
+Q01335,2026-09-03T01:49:41.287Z,U06,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,205,205,0,operator,True,False,0.205,0.205,0,,0,0,0,different_user,Q01331,U07,step_cap
+Q01340,2026-09-03T02:36:26.275Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,96,96,0,team_lead,True,False,0.096,0.096,0,,0,0,0,same_user,Q01304,U07,step_cap
+Q01344,2026-09-03T02:57:18.644Z,U03,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,203,203,0,operator,True,False,0.203,0.203,0,,0,0,0,different_user,Q01321,U07,step_cap
+Q01347,2026-09-03T03:24:59.474Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,214,214,0,team_lead,True,False,0.214,0.214,0,,0,0,0,same_user,Q01293,U07,step_cap
+Q01350,2026-09-03T03:33:39.211Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,155,155,0,team_lead,True,False,0.155,0.155,0,,0,0,0,same_user,Q01348,U07,step_cap
+Q01366,2026-09-03T07:44:26.855Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,215,215,0,team_lead,True,False,0.215,0.215,0,,0,0,0,same_user,Q01365,U07,step_cap
+Q01370,2026-09-03T09:11:27.191Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,163,163,0,team_lead,True,False,0.163,0.163,0,,0,0,0,same_user,Q01321,U07,step_cap
+Q01372,2026-09-03T09:24:06.245Z,U06,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,96,96,0,operator,True,False,0.096,0.096,0,,0,0,0,different_user,Q01365,U07,step_cap
+Q01373,2026-09-03T09:26:25.019Z,U06,What's happening with BK473937?,c15a54892456,1,200,cache,0,0,0,0,0,180,180,0,operator,False,False,0.18,0.18,0,,0,0,0,same_user,Q01338,U06,answered
+Q01379,2026-09-04T01:36:55.741Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,140,140,0,team_lead,True,False,0.14,0.14,0,,0,0,0,same_user,Q01378,U07,step_cap
+Q01386,2026-09-04T02:16:12.023Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,93,93,0,team_lead,True,False,0.093,0.093,0,,0,0,0,same_user,Q01385,U07,step_cap
+Q01387,2026-09-04T02:17:25.910Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,150,150,0,team_lead,True,False,0.15,0.15,0,,0,0,0,same_user,Q01385,U07,step_cap
+Q01388,2026-09-04T02:21:00.821Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,185,185,0,team_lead,True,False,0.185,0.185,0,,0,0,0,same_user,Q01385,U07,step_cap
+Q01391,2026-09-04T02:54:28.310Z,U07,Where is CBTU4857765?,1865cf186623,1,200,cache,0,0,0,0,0,129,129,0,team_lead,False,False,0.129,0.129,0,,0,0,0,different_user,Q01363,U11,answered
+Q01393,2026-09-04T03:00:16.684Z,U11,Where is CBTU4857765?,1865cf186623,1,200,cache,0,0,0,0,0,94,94,0,operator,False,False,0.094,0.094,0,,0,0,0,same_user,Q01363,U11,answered
+Q01396,2026-09-04T03:27:10.326Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,124,124,0,team_lead,True,False,0.124,0.124,0,,0,0,0,same_user,Q01365,U07,step_cap
+Q01399,2026-09-04T03:36:56.584Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,210,210,0,team_lead,True,False,0.21,0.21,0,,0,0,0,same_user,Q01378,U07,step_cap
+Q01410,2026-09-04T06:02:43.590Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,189,189,0,team_lead,True,False,0.189,0.189,0,,0,0,0,same_user,Q01365,U07,step_cap
+Q01415,2026-09-04T06:48:29.112Z,U06,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,103,103,0,operator,True,False,0.103,0.103,0,,0,0,0,different_user,Q01378,U07,step_cap
+Q01416,2026-09-04T07:08:19.056Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,130,130,0,team_lead,True,False,0.13,0.13,0,,0,0,0,same_user,Q01385,U07,step_cap
+Q01419,2026-09-04T07:25:03.642Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,142,142,0,team_lead,True,False,0.142,0.142,0,,0,0,0,same_user,Q01365,U07,step_cap
+Q01423,2026-09-04T08:19:46.292Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,153,153,0,team_lead,True,False,0.153,0.153,0,,0,0,0,same_user,Q01378,U07,step_cap
+Q01442,2026-09-07T00:56:02.713Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,118,118,0,team_lead,True,False,0.118,0.118,0,,0,0,0,same_user,Q01441,U07,step_cap
+Q01444,2026-09-07T01:03:05.966Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,157,157,0,team_lead,True,False,0.157,0.157,0,,0,0,0,same_user,Q01441,U07,step_cap
+Q01453,2026-09-07T01:04:20.175Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,100,100,0,team_lead,True,False,0.1,0.1,0,,0,0,0,same_user,Q01445,U07,step_cap
+Q01454,2026-09-07T01:04:42.439Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,173,173,0,team_lead,True,False,0.173,0.173,0,,0,0,0,same_user,Q01448,U07,step_cap
+Q01455,2026-09-07T01:05:10.908Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,180,180,0,team_lead,True,False,0.18,0.18,0,,0,0,0,same_user,Q01452,U07,step_cap
+Q01456,2026-09-07T01:05:19.738Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,127,127,0,team_lead,True,False,0.127,0.127,0,,0,0,0,same_user,Q01449,U07,step_cap
+Q01457,2026-09-07T01:05:27.088Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,139,139,0,team_lead,True,False,0.139,0.139,0,,0,0,0,same_user,Q01450,U07,step_cap
+Q01458,2026-09-07T01:05:39.231Z,U07,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,153,153,0,team_lead,True,False,0.153,0.153,0,,0,0,0,same_user,Q01446,U07,step_cap
+Q01459,2026-09-07T01:05:46.554Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,131,131,0,team_lead,True,False,0.131,0.131,0,,0,0,0,same_user,Q01451,U07,step_cap
+Q01462,2026-09-07T01:21:51.903Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,186,186,0,team_lead,True,False,0.186,0.186,0,,0,0,0,same_user,Q01441,U07,step_cap
+Q01469,2026-09-07T01:52:06.893Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,122,122,0,team_lead,True,False,0.122,0.122,0,,0,0,0,same_user,Q01468,U07,step_cap
+Q01475,2026-09-07T03:12:02.576Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,143,143,0,team_lead,True,False,0.143,0.143,0,,0,0,0,same_user,Q01445,U07,step_cap
+Q01479,2026-09-07T06:06:17.534Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,212,212,0,team_lead,True,False,0.212,0.212,0,,0,0,0,same_user,Q01441,U07,step_cap
+Q01482,2026-09-07T06:38:47.287Z,U03,What does the BL for BK875813 say about the consignee?,ea93aaf9703b,1,200,cache,0,0,0,0,0,219,219,0,operator,False,False,0.219,0.219,0,,0,0,0,same_user,Q01478,U03,answered
+Q01491,2026-09-07T08:32:35.149Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,173,173,0,team_lead,True,False,0.173,0.173,0,,0,0,0,same_user,Q01468,U07,step_cap
+Q01505,2026-09-08T01:31:01.364Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,180,180,0,team_lead,True,False,0.18,0.18,0,,0,0,0,same_user,Q01504,U07,step_cap
+Q01518,2026-09-08T03:46:21.260Z,U07,Where is ORBU3428539?,830e15872403,1,200,cache,0,0,0,0,0,112,112,0,team_lead,False,False,0.112,0.112,0,,0,0,0,different_user,Q01488,U11,answered
+Q01533,2026-09-08T07:09:21.222Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,103,103,0,team_lead,True,False,0.103,0.103,0,,0,0,0,same_user,Q01531,U07,step_cap
+Q01535,2026-09-08T07:50:20.544Z,U07,where is KSTU8803319,ead516226f67,1,200,cache,0,0,0,0,0,116,116,0,team_lead,False,False,0.116,0.116,0,,0,0,0,same_user,Q01503,U07,answered
+Q01538,2026-09-08T08:50:02.028Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,210,210,0,team_lead,True,False,0.21,0.21,0,,0,0,0,different_user,Q01529,U15,answered
+Q01542,2026-09-08T09:46:38.104Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,194,194,0,team_lead,True,False,0.194,0.194,0,,0,0,0,same_user,Q01541,U07,step_cap
+Q01547,2026-09-09T01:30:24.464Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,194,194,0,team_lead,True,False,0.194,0.194,0,,0,0,0,same_user,Q01536,U07,step_cap
+Q01550,2026-09-09T01:52:30.250Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,180,180,0,team_lead,True,False,0.18,0.18,0,,0,0,0,different_user,Q01529,U15,answered
+Q01556,2026-09-09T02:18:31.819Z,U06,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,147,147,0,operator,True,False,0.147,0.147,0,,0,0,0,different_user,Q01536,U07,step_cap
+Q01571,2026-09-09T05:54:54.208Z,U31,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,117,117,0,operator,True,False,0.117,0.117,0,,0,0,0,different_user,Q01529,U15,answered
+Q01577,2026-09-09T07:01:28.072Z,U03,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,158,158,0,operator,True,False,0.158,0.158,0,,0,0,0,different_user,Q01531,U07,step_cap
+Q01578,2026-09-09T07:04:08.723Z,U06,where is QVRU2410314,8cd278d31135,1,200,cache,0,0,0,0,0,218,218,0,operator,False,False,0.218,0.218,0,,0,0,0,same_user,Q01562,U06,answered
+Q01596,2026-09-10T00:46:55.422Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,163,163,0,team_lead,True,False,0.163,0.163,0,,0,0,0,same_user,Q01595,U07,step_cap
+Q01610,2026-09-10T02:53:02.544Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,93,93,0,team_lead,True,False,0.093,0.093,0,,0,0,0,same_user,Q01585,U07,step_cap
+Q01615,2026-09-10T03:38:54.393Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,181,181,0,team_lead,True,False,0.181,0.181,0,,0,0,0,same_user,Q01614,U07,step_cap
+Q01627,2026-09-10T06:28:00.441Z,U03,Where is KSTU7722368?,ffe9e84d8267,1,200,cache,0,0,0,0,0,191,191,0,operator,False,False,0.191,0.191,0,,0,0,0,same_user,Q01611,U03,answered
+Q01633,2026-09-10T07:01:09.084Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,180,180,0,team_lead,True,False,0.18,0.18,0,,0,0,0,same_user,Q01585,U07,step_cap
+Q01635,2026-09-10T08:14:00.483Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,207,207,0,team_lead,True,False,0.207,0.207,0,,0,0,0,same_user,Q01634,U07,step_cap
+Q01639,2026-09-10T09:40:50.992Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,124,124,0,team_lead,True,False,0.124,0.124,0,,0,0,0,same_user,Q01638,U07,step_cap
+Q01643,2026-09-11T01:12:41.507Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,202,202,0,team_lead,True,False,0.202,0.202,0,,0,0,0,same_user,Q01638,U07,step_cap
+Q01645,2026-09-11T01:14:16.331Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,217,217,0,team_lead,True,False,0.217,0.217,0,,0,0,0,same_user,Q01644,U07,step_cap
+Q01653,2026-09-11T01:50:42.340Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,124,124,0,team_lead,True,False,0.124,0.124,0,,0,0,0,same_user,Q01638,U07,step_cap
+Q01672,2026-09-11T06:00:09.744Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,169,169,0,team_lead,True,False,0.169,0.169,0,,0,0,0,same_user,Q01671,U07,step_cap
+Q01678,2026-09-11T07:35:45.032Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,178,178,0,team_lead,True,False,0.178,0.178,0,,0,0,0,same_user,Q01676,U07,step_cap
+Q01681,2026-09-11T07:44:02.302Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,136,136,0,team_lead,True,False,0.136,0.136,0,,0,0,0,same_user,Q01634,U07,step_cap
+Q01688,2026-09-11T10:12:28.294Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,136,136,0,team_lead,True,False,0.136,0.136,0,,0,0,0,same_user,Q01686,U07,step_cap
+Q01707,2026-09-14T01:05:00.585Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,208,208,0,team_lead,True,False,0.208,0.208,0,,0,0,0,same_user,Q01698,U07,step_cap
+Q01708,2026-09-14T01:05:02.340Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,121,121,0,team_lead,True,False,0.121,0.121,0,,0,0,0,same_user,Q01705,U07,step_cap
+Q01709,2026-09-14T01:05:10.197Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,151,151,0,team_lead,True,False,0.151,0.151,0,,0,0,0,same_user,Q01704,U07,step_cap
+Q01710,2026-09-14T01:05:34.504Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,129,129,0,team_lead,True,False,0.129,0.129,0,,0,0,0,same_user,Q01697,U07,step_cap
+Q01711,2026-09-14T01:05:36.889Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,146,146,0,team_lead,True,False,0.146,0.146,0,,0,0,0,same_user,Q01706,U07,step_cap
+Q01712,2026-09-14T01:05:41.921Z,U07,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,103,103,0,team_lead,True,False,0.103,0.103,0,,0,0,0,same_user,Q01699,U07,step_cap
+Q01713,2026-09-14T01:05:46.091Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,142,142,0,team_lead,True,False,0.142,0.142,0,,0,0,0,same_user,Q01700,U07,step_cap
+Q01714,2026-09-14T01:05:56.719Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,138,138,0,team_lead,True,False,0.138,0.138,0,,0,0,0,same_user,Q01702,U07,step_cap
+Q01715,2026-09-14T01:06:02.956Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,174,174,0,team_lead,True,False,0.174,0.174,0,,0,0,0,same_user,Q01701,U07,step_cap
+Q01726,2026-09-14T02:21:12.364Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,133,133,0,team_lead,True,False,0.133,0.133,0,,0,0,0,same_user,Q01706,U07,step_cap
+Q01729,2026-09-14T02:43:02.208Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,96,96,0,team_lead,True,False,0.096,0.096,0,,0,0,0,same_user,Q01702,U07,step_cap
+Q01734,2026-09-14T03:49:17.631Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,145,145,0,team_lead,True,False,0.145,0.145,0,,0,0,0,same_user,Q01700,U07,step_cap
+Q01736,2026-09-14T03:59:03.383Z,U07,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,212,212,0,team_lead,True,False,0.212,0.212,0,,0,0,0,same_user,Q01699,U07,step_cap
+Q01737,2026-09-14T04:23:39.764Z,U07,Which of my shipments arrive in Hamburg this week?,21b2589a9109,1,200,cache,0,0,0,0,0,114,114,0,team_lead,True,False,0.114,0.114,0,,0,0,0,same_user,Q01700,U07,step_cap
+Q01745,2026-09-14T06:17:25.525Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,170,170,0,team_lead,True,False,0.17,0.17,0,,0,0,0,same_user,Q01706,U07,step_cap
+Q01753,2026-09-14T07:35:43.369Z,U31,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,180,180,0,operator,True,False,0.18,0.18,0,,0,0,0,different_user,Q01697,U07,step_cap
+Q01760,2026-09-14T09:24:01.069Z,U13,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,129,129,0,operator,True,False,0.129,0.129,0,,0,0,0,different_user,Q01697,U07,step_cap
+Q01779,2026-09-15T02:13:30.908Z,U31,Latest on QVRU9513238?,7f695103fd5e,1,200,cache,0,0,0,0,0,136,136,0,operator,False,False,0.136,0.136,0,,0,0,0,same_user,Q01751,U31,answered
+Q01781,2026-09-15T02:29:39.825Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,95,95,0,team_lead,True,False,0.095,0.095,0,,0,0,0,same_user,Q01780,U07,step_cap
+Q01785,2026-09-15T03:05:06.417Z,U13,What's happening with BK226782?,b3b8c447dab7,1,200,cache,0,0,0,0,0,205,205,0,operator,False,False,0.205,0.205,0,,0,0,0,same_user,Q01763,U13,answered
+Q01790,2026-09-15T03:29:46.096Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,151,151,0,team_lead,True,False,0.151,0.151,0,,0,0,0,same_user,Q01780,U07,step_cap
+Q01794,2026-09-15T03:54:47.629Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,216,216,0,team_lead,True,False,0.216,0.216,0,,0,0,0,same_user,Q01793,U07,step_cap
+Q01797,2026-09-15T05:30:40.479Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,174,174,0,team_lead,True,False,0.174,0.174,0,,0,0,0,different_user,Q01766,U11,answered
+Q01808,2026-09-15T07:24:32.205Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,124,124,0,team_lead,True,False,0.124,0.124,0,,0,0,0,same_user,Q01807,U07,answered
+Q01811,2026-09-15T08:43:03.817Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,109,109,0,team_lead,True,False,0.109,0.109,0,,0,0,0,different_user,Q01766,U11,answered
+Q01815,2026-09-15T09:52:13.522Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,199,199,0,team_lead,True,False,0.199,0.199,0,,0,0,0,same_user,Q01814,U07,step_cap
+Q01816,2026-09-15T10:44:45.558Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,206,206,0,team_lead,True,False,0.206,0.206,0,,0,0,0,different_user,Q01766,U11,answered
+Q01826,2026-09-16T01:27:23.840Z,U07,Which of my shipments arrive in Rotterdam this week?,6a57dd5917a3,1,200,cache,0,0,0,0,0,185,185,0,team_lead,True,False,0.185,0.185,0,,0,0,0,same_user,Q01825,U07,step_cap
+Q01829,2026-09-16T01:48:51.970Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,172,172,0,team_lead,True,False,0.172,0.172,0,,0,0,0,same_user,Q01807,U07,answered
+Q01838,2026-09-16T03:32:57.815Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,114,114,0,team_lead,True,False,0.114,0.114,0,,0,0,0,different_user,Q01837,U15,answered
+Q01859,2026-09-16T09:13:41.840Z,U13,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,165,165,0,operator,True,False,0.165,0.165,0,,0,0,0,different_user,Q01853,U03,answered
+Q01868,2026-09-17T01:19:26.410Z,U07,Which of my shipments arrive in Jebel Ali this week?,eefe077061f2,1,200,cache,0,0,0,0,0,152,152,0,team_lead,True,False,0.152,0.152,0,,0,0,0,same_user,Q01867,U07,step_cap
+Q01873,2026-09-17T02:06:02.129Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,128,128,0,team_lead,True,False,0.128,0.128,0,,0,0,0,same_user,Q01866,U07,answered
+Q01883,2026-09-17T03:18:39.318Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,119,119,0,team_lead,True,False,0.119,0.119,0,,0,0,0,different_user,Q01853,U03,answered
+Q01884,2026-09-17T03:45:40.767Z,U07,Which of my shipments are still at origin?,42f6565130a2,1,200,cache,0,0,0,0,0,152,152,0,team_lead,True,False,0.152,0.152,0,,0,0,0,same_user,Q01866,U07,answered
+Q01909,2026-09-18T01:25:05.115Z,U07,Which of my shipments are late?,45695a38d397,1,200,cache,0,0,0,0,0,218,218,0,team_lead,True,False,0.218,0.218,0,,0,0,0,different_user,Q01904,U11,answered
+Q01913,2026-09-18T01:34:09.472Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,125,125,0,team_lead,True,False,0.125,0.125,0,,0,0,0,same_user,Q01911,U07,step_cap
+Q01920,2026-09-18T02:50:07.063Z,U07,Show me my shipments with customs holds,f10b5459eb93,1,200,cache,0,0,0,0,0,131,131,0,team_lead,True,False,0.131,0.131,0,,0,0,0,same_user,Q01919,U07,step_cap
+Q01924,2026-09-18T03:08:11.558Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,184,184,0,team_lead,True,False,0.184,0.184,0,,0,0,0,different_user,Q01904,U11,answered
+Q01926,2026-09-18T03:30:16.665Z,U07,Which of my shipments arrive in Felixstowe this week?,832c18fd650c,1,200,cache,0,0,0,0,0,211,211,0,team_lead,True,False,0.211,0.211,0,,0,0,0,same_user,Q01911,U07,step_cap
+Q01927,2026-09-18T03:40:57.223Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,147,147,0,team_lead,True,False,0.147,0.147,0,,0,0,0,same_user,Q01914,U07,step_cap
+Q01929,2026-09-18T03:53:01.714Z,U07,which of my shipments are late,45695a38d397,1,200,cache,0,0,0,0,0,210,210,0,team_lead,True,False,0.21,0.21,0,,0,0,0,different_user,Q01904,U11,answered
+Q01933,2026-09-18T04:40:26.491Z,U07,Which of my shipments arrive in Los Angeles this week?,f789c32b3e6b,1,200,cache,0,0,0,0,0,119,119,0,team_lead,True,False,0.119,0.119,0,,0,0,0,same_user,Q01932,U07,step_cap
+Q01938,2026-09-18T05:50:01.565Z,U07,status of CBTU5364912 pls,34c2cf7f0f8e,1,200,cache,0,0,0,0,0,110,110,0,team_lead,False,False,0.11,0.11,0,,0,0,0,different_user,Q01892,U15,answered
+Q01942,2026-09-18T06:30:10.905Z,U07,Which of my shipments arrive this week?,dcbb3b3c1212,1,200,cache,0,0,0,0,0,162,162,0,team_lead,True,False,0.162,0.162,0,,0,0,0,same_user,Q01914,U07,step_cap

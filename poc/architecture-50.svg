@@ -1,188 +1,197 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
-<title id="title">Freight operations assistant: proposed C4 Container diagram for 50 customers</title>
-<desc id="desc">Proposed design. Operator to Web Client to API Gateway to an Operations Assistant API. The API returns a cached answer or a durable job ID. SQS sends jobs to Lambda workers. Workers use SQL, model calls and limited carrier calls. Postgres has tenant access rules, jobs, caches and rate counters, with a standby in another zone. S3 and the vector database have tenant access controls. Background jobs update shipment data and the document index. CloudWatch holds logs and alarms.</desc>
+<title id="title">Freight operations assistant: proposed C4 Container diagram for a fifty-customer pilot</title>
+<desc id="desc">Proposed design, not implemented. Users submit questions through the Web Client and API Gateway. The Operations Assistant saves authorized jobs and returns a job ID. SQS sends jobs to workers. Workers compute complete SQL reports, use the model to explain facts, and share a carrier limiter backed by Postgres counters. Data and cache access use customer, team and user scope. Bulk ingestion keeps newer live data. A proposed document indexing job applies access metadata. CloudWatch tracks queue age, data age, errors and spend. Trackers and email are deferred.</desc>
 <rect width="1920" height="1080" fill="#ffffff"/>
-<text x="40" y="51" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="32" font-weight="700" fill="#172337">Freight operations assistant</text>
-<text x="40" y="79" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">C4 Container diagram  /  Proposed design for 50 customers</text>
-<polyline points="1200,55 1245,55" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="1245,55 1235,50.0 1235,60.0" fill="#2458b5"/>
-<text x="1256" y="60" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Request / synchronous</text>
-<polyline points="1455,55 1495,55" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
-<polygon points="1495,55 1487,51.0 1487,59.0" fill="#166b69"/>
-<text x="1505" y="60" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Data / service</text>
-<polyline points="1680,55 1720,55" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
-<polygon points="1720,55 1712,51.0 1712,59.0" fill="#705580"/>
-<text x="1730" y="60" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Background / logs</text>
+<text x="40" y="49" font-family="Segoe UI,Arial,sans-serif" font-size="32" font-weight="700" text-anchor="start" fill="#172337">Freight operations assistant — fifty-customer pilot</text>
+<text x="40" y="80" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#465469">C4 Container diagram / Proposed architecture; not implemented</text>
+<polyline points="1180,62 1220,62" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1220,62 1210,58 1210,66" fill="#2458b5"/>
+<text x="1230" y="67" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#465469">Request / synchronous</text>
+<polyline points="1450,62 1490,62" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1490,62 1482,58 1482,66" fill="#166b69"/>
+<text x="1500" y="67" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#465469">Data / service</text>
+<polyline points="1670,62 1710,62" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="1710,62 1702,58 1702,66" fill="#705580"/>
+<text x="1720" y="67" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#465469">Background / logs</text>
 <rect x="220" y="110" width="1370" height="960" rx="9" fill="#ffffff" stroke="#8593a3" stroke-width="2"/>
-<text x="260" y="152" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#172337">Freight Operations Assistant — 50 Customers</text>
-<text x="260" y="193" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#2458b5">REQUEST FLOW</text>
-<text x="1650" y="357" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#526070">EXTERNAL SERVICES</text>
+<text x="260" y="151" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#172337">Freight Operations Assistant — 50-Customer Pilot</text>
+<text x="1050" y="151" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#465469">5,267 users · 374 leads · 175,750 shipments</text>
+<text x="260" y="195" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" text-anchor="start" fill="#2458b5">REQUEST FLOW</text>
+<text x="1650" y="365" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" text-anchor="start" fill="#526070">EXTERNAL DEPENDENCIES</text>
+<text x="900" y="428" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" text-anchor="start" fill="#705580">QUEUED WORK</text>
+<text x="320" y="660" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" text-anchor="start" fill="#166b69">DATA LAYER</text>
+<text x="260" y="890" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" text-anchor="start" fill="#705580">BACKGROUND PROCESSING</text>
+<text x="1220" y="890" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" text-anchor="start" fill="#705580">OBSERVABILITY</text>
 <polyline points="150,290 260,290" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="260,290 250,285.0 250,295.0" fill="#2458b5"/>
+<polygon points="260,290 250,286 250,294" fill="#2458b5"/>
 <polyline points="510,290 580,290" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="580,290 570,285.0 570,295.0" fill="#2458b5"/>
+<polygon points="580,290 570,286 570,294" fill="#2458b5"/>
 <polyline points="830,290 900,290" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="900,290 890,285.0 890,295.0" fill="#2458b5"/>
-<polyline points="940,360 940,395 430,395 430,650" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
-<polygon points="430,650 426.0,642 434.0,642" fill="#166b69"/>
-<polyline points="1070,360 1070,430" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
-<polygon points="1070,430 1066.0,422 1074.0,422" fill="#705580"/>
-<polyline points="1150,500 1230,500" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
-<polygon points="1230,500 1222,496.0 1222,504.0" fill="#705580"/>
-<polyline points="1510,477 1610,477 1610,460 1650,460" fill="none" stroke="#2458b5" stroke-width="3" stroke-linejoin="round"/>
-<polygon points="1650,460 1642,456.0 1642,464.0" fill="#2458b5"/>
-<polyline points="1510,530 1610,530 1610,680 1650,680" fill="none" stroke="#2458b5" stroke-width="3" stroke-linejoin="round"/>
-<polygon points="1650,680 1642,676.0 1642,684.0" fill="#2458b5"/>
-<polyline points="1260,570 1260,610 500,610 500,650" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
-<polygon points="500,650 496.0,642 504.0,642" fill="#166b69"/>
-<polyline points="1400,570 1400,650" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
-<polygon points="1400,650 1396.0,642 1404.0,642" fill="#166b69"/>
-<polyline points="1510,555 1550,555 1550,965 1490,965" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
-<polygon points="1490,965 1498,961.0 1498,969.0" fill="#705580"/>
-<polyline points="200,965 260,965" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
-<polygon points="260,965 252,961.0 252,969.0" fill="#705580"/>
-<polyline points="570,900 570,790" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
-<polygon points="570,790 566.0,798 574.0,798" fill="#705580"/>
-<polyline points="880,790 880,900" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
-<polygon points="880,900 876.0,892 884.0,892" fill="#166b69"/>
-<polyline points="980,900 980,855 1350,855 1350,790" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
-<polygon points="1350,790 1346.0,798 1354.0,798" fill="#166b69"/>
-<circle cx="100" cy="239" r="22" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
-<rect x="50" y="267" width="100" height="70" rx="12" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
-<text x="100" y="375" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#172337">Operator / User</text>
-<text x="100" y="399" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#526070">[Person]</text>
-<text x="100" y="423" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Customer team member</text>
-<rect x="260" y="220" width="250" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="1.8"/>
-<rect x="260" y="220" width="5" height="140" rx="2" fill="#2458b5" stroke="#2458b5" stroke-width="1"/>
-<text x="385.0" y="243" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#2458b5">[Container]</text>
-<text x="385.0" y="269" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Web Client</text>
-<text x="385.0" y="292" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Browser application</text>
-<text x="385.0" y="318" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Shows answers and job status</text>
-<text x="385.0" y="337" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Reuses request ID on retry</text>
-<rect x="580" y="220" width="250" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="1.8"/>
-<rect x="580" y="220" width="5" height="140" rx="2" fill="#2458b5" stroke="#2458b5" stroke-width="1"/>
-<text x="705.0" y="243" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#2458b5">[Container]</text>
-<text x="705.0" y="269" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">API Gateway</text>
-<text x="705.0" y="292" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">AWS API Gateway</text>
-<text x="705.0" y="318" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Checks user identity</text>
-<text x="705.0" y="337" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Routes questions and job reads</text>
-<rect x="900" y="220" width="370" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="1.8"/>
-<rect x="900" y="220" width="5" height="140" rx="2" fill="#2458b5" stroke="#2458b5" stroke-width="1"/>
-<text x="1085.0" y="243" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#2458b5">[Container]</text>
-<text x="1085.0" y="269" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Operations Assistant</text>
-<text x="1085.0" y="292" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">API Lambda</text>
-<text x="1085.0" y="318" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Checks tenant access and job limits</text>
-<text x="1085.0" y="337" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Returns a cached answer or job ID</text>
-<rect x="900" y="430" width="250" height="140" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="1.8"/>
-<rect x="900" y="430" width="5" height="140" rx="2" fill="#705580" stroke="#705580" stroke-width="1"/>
-<text x="1025.0" y="453" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#705580">[Container]</text>
-<text x="1025.0" y="479" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Job Queues</text>
-<text x="1025.0" y="502" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Amazon SQS</text>
-<text x="1025.0" y="528" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Work and dead-letter queues</text>
-<text x="1025.0" y="547" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Retries failed jobs</text>
-<rect x="1230" y="430" width="280" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="1.8"/>
-<rect x="1230" y="430" width="5" height="140" rx="2" fill="#2458b5" stroke="#2458b5" stroke-width="1"/>
-<text x="1370.0" y="453" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#2458b5">[Container]</text>
-<text x="1370.0" y="479" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Assistant Workers</text>
-<text x="1370.0" y="502" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">AWS Lambda</text>
-<text x="1370.0" y="528" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">SQL reports and model use</text>
-<text x="1370.0" y="547" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Limits for jobs and carrier calls</text>
-<rect x="1650" y="390" width="240" height="140" rx="7" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
-<rect x="1650" y="390" width="5" height="140" rx="2" fill="#526070" stroke="#526070" stroke-width="1"/>
-<text x="1770.0" y="413" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#526070">[External System]</text>
-<text x="1770.0" y="439" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">LLM Vendor</text>
-<text x="1770.0" y="462" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">m-fast / m-large</text>
-<text x="1770.0" y="488" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Small model for simple work</text>
-<text x="1770.0" y="507" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Large model for complex work</text>
-<rect x="1650" y="610" width="240" height="140" rx="7" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
-<rect x="1650" y="610" width="5" height="140" rx="2" fill="#526070" stroke="#526070" stroke-width="1"/>
-<text x="1770.0" y="633" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#526070">[External System]</text>
-<text x="1770.0" y="659" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Carrier Tracking API</text>
-<text x="1770.0" y="682" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Live carrier service</text>
-<text x="1770.0" y="708" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">One shared account quota</text>
-<text x="1770.0" y="727" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Current limit: 60 requests/min</text>
-<rect x="260" y="650" width="350" height="140" rx="7" fill="#edf8f6" stroke="#166b69" stroke-width="1.8"/>
-<rect x="260" y="650" width="5" height="140" rx="2" fill="#166b69" stroke="#166b69" stroke-width="1"/>
-<text x="435.0" y="673" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#166b69">[Database]</text>
-<text x="435.0" y="699" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">RDS / Postgres</text>
-<text x="435.0" y="722" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Amazon RDS · PostgreSQL</text>
-<text x="435.0" y="748" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Tenant rules, jobs, caches and quotas</text>
-<text x="435.0" y="767" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Primary and standby in two zones</text>
-<rect x="740" y="650" width="280" height="140" rx="7" fill="#edf8f6" stroke="#166b69" stroke-width="1.8"/>
-<rect x="740" y="650" width="5" height="140" rx="2" fill="#166b69" stroke="#166b69" stroke-width="1"/>
-<text x="880.0" y="673" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#166b69">[Datastore]</text>
-<text x="880.0" y="699" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Document Storage</text>
-<text x="880.0" y="722" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Amazon S3</text>
-<text x="880.0" y="748" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Customer document files</text>
-<text x="880.0" y="767" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Separate tenant paths</text>
-<rect x="1140" y="650" width="350" height="140" rx="7" fill="#edf8f6" stroke="#166b69" stroke-width="1.8"/>
-<rect x="1140" y="650" width="5" height="140" rx="2" fill="#166b69" stroke="#166b69" stroke-width="1"/>
-<text x="1315.0" y="673" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#166b69">[Database]</text>
-<text x="1315.0" y="699" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Vector DB</text>
-<text x="1315.0" y="722" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Existing vector service</text>
-<text x="1315.0" y="748" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Search only permitted documents</text>
-<text x="1315.0" y="767" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Tenant and document access filters</text>
-<rect x="30" y="900" width="170" height="140" rx="7" fill="#f0f2f5" stroke="#526070" stroke-width="1.8"/>
-<rect x="30" y="900" width="5" height="140" rx="2" fill="#526070" stroke="#526070" stroke-width="1"/>
-<text x="115.0" y="923" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#526070">[External System]</text>
-<text x="115.0" y="949" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Carrier Bulk</text>
-<text x="115.0" y="972" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Feed</text>
-<text x="115.0" y="995" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Carrier data</text>
-<text x="115.0" y="1021" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Shipments and events</text>
-<rect x="260" y="900" width="330" height="130" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="1.8"/>
-<rect x="260" y="900" width="5" height="130" rx="2" fill="#705580" stroke="#705580" stroke-width="1"/>
-<text x="425.0" y="923" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#705580">[Container]</text>
-<text x="425.0" y="949" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Shipment Ingest Job</text>
-<text x="425.0" y="972" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Scheduled Lambda</text>
-<text x="425.0" y="998" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Updates shipment data</text>
-<text x="425.0" y="1017" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Feed interval: every 4 hours</text>
-<rect x="740" y="900" width="280" height="130" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="1.8"/>
-<rect x="740" y="900" width="5" height="130" rx="2" fill="#705580" stroke="#705580" stroke-width="1"/>
-<text x="880.0" y="923" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#705580">[Container]</text>
-<text x="880.0" y="949" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">Document Index Job</text>
-<text x="880.0" y="972" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Lambda · S3 events</text>
-<text x="880.0" y="998" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Reads and tags document text</text>
-<text x="880.0" y="1017" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Updates the search index</text>
-<rect x="1220" y="900" width="270" height="130" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="1.8"/>
-<rect x="1220" y="900" width="5" height="130" rx="2" fill="#705580" stroke="#705580" stroke-width="1"/>
-<text x="1355.0" y="923" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#705580">[Container]</text>
-<text x="1355.0" y="949" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#172337">CloudWatch Logs</text>
-<text x="1355.0" y="972" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#465469">Amazon CloudWatch</text>
-<text x="1355.0" y="998" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Logs, cost metrics and alarms</text>
-<text x="1355.0" y="1017" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#172337">Tracks each tenant and job</text>
-<text x="900" y="415" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#705580">QUEUED WORK</text>
-<text x="260" y="631" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#166b69">DATA LAYER</text>
-<text x="260" y="878" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#705580">BACKGROUND JOBS</text>
-<text x="1220" y="878" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#705580">OBSERVABILITY</text>
-<rect x="181.5" y="259" width="45.0" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="204" y="274" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Uses</text>
-<rect x="516.74609375" y="259" width="56.5078125" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="545" y="274" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">HTTPS</text>
-<rect x="836.75390625" y="259" width="56.4921875" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="865" y="274" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Invoke</text>
-<rect x="485.00390625" y="368" width="229.9921875" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="600" y="383" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Read cache / save job / read result</text>
-<rect x="1094.5" y="382" width="81.0" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="1135" y="397" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Queue job</text>
-<rect x="1158.0" y="469" width="64.0" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="1190" y="484" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Run job</text>
-<rect x="1537.0" y="431" width="86.0" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="1580" y="446" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Model calls</text>
-<rect x="1570.0" y="577" width="80.0" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="1610" y="592" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Live status</text>
-<rect x="738.24609375" y="583" width="303.5078125" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="890" y="598" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">SQL reports / save results / share recent status</text>
-<rect x="1346.75390625" y="604" width="106.4921875" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="1400" y="619" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Read passages</text>
-<rect x="1527.75" y="804" width="44.5" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="1550" y="819" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Logs</text>
-<rect x="512.5" y="827" width="155.0" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="590" y="842" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Update shipment rows</text>
-<rect x="821.75" y="827" width="116.5" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="880" y="842" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">New documents</text>
-<rect x="1128.25" y="843" width="153.5" height="22" rx="2" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
-<text x="1205" y="858" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#465469">Write document index</text>
-<text x="520" y="480" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#2458b5">FAST RESPONSE</text>
-<text x="520" y="508" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#172337">The API does not wait for long work.</text>
-<text x="520" y="533" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#172337">The client reads results by job ID.</text>
+<polygon points="900,290 890,286 890,294" fill="#2458b5"/>
+<polyline points="940,360 940,395 290,395 290,680" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="290,680 286,672 294,672" fill="#166b69"/>
+<polyline points="1070,360 1070,445" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="1070,445 1066,437 1074,437" fill="#705580"/>
+<polyline points="1150,515 1230,515" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="1230,515 1222,511 1222,519" fill="#705580"/>
+<polyline points="1260,585 1260,640 490,640 490,680" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="490,680 486,672 494,672" fill="#166b69"/>
+<polyline points="1400,585 1400,680" fill="none" stroke="#166b69" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1400,680 1396,672 1404,672" fill="#166b69"/>
+<polyline points="1550,490 1650,490" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1650,490 1640,486 1640,494" fill="#2458b5"/>
+<polyline points="1550,535 1610,535 1610,560 1760,560 1760,635" fill="none" stroke="#2458b5" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1760,635 1756,625 1764,625" fill="#2458b5"/>
+<polyline points="1530,585 1570,585 1570,970 1490,970" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="1490,970 1498,966 1498,974" fill="#705580"/>
+<polyline points="200,970 260,970" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="260,970 252,966 252,974" fill="#705580"/>
+<polyline points="560,900 560,830" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="560,830 556,838 564,838" fill="#705580"/>
+<polyline points="880,830 880,900" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="880,900 876,892 884,892" fill="#705580"/>
+<polyline points="980,900 980,865 1350,865 1350,830" fill="none" stroke="#705580" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<polygon points="1350,830 1346,838 1354,838" fill="#705580"/>
+<circle cx="100" cy="233" r="22" fill="#f0f2f5" stroke="#526070" stroke-width="2"/>
+<rect x="50" y="261" width="100" height="90" rx="13" fill="#f0f2f5" stroke="#526070" stroke-width="2"/>
+<text x="100" y="388" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Operator / User</text>
+<text x="100" y="414" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">[Person]</text>
+<text x="100" y="441" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Operator or team lead</text>
+<rect x="260" y="220" width="250" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="2"/>
+<path d="M 264,222 V 358" stroke="#2458b5" stroke-width="3"/>
+<text x="385.0" y="243" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#2458b5">[Container]</text>
+<text x="385.0" y="267" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Web Client</text>
+<text x="385.0" y="292" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Browser application</text>
+<text x="385.0" y="313" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Submit jobs; read progress.</text>
+<text x="385.0" y="334" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Reuse request ID on retry.</text>
+<rect x="580" y="220" width="250" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="2"/>
+<path d="M 584,222 V 358" stroke="#2458b5" stroke-width="3"/>
+<text x="705.0" y="243" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#2458b5">[Container]</text>
+<text x="705.0" y="267" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">API Gateway</text>
+<text x="705.0" y="292" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">AWS API Gateway</text>
+<text x="705.0" y="313" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Verify user identity.</text>
+<text x="705.0" y="334" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Route jobs and result reads.</text>
+<rect x="900" y="220" width="370" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="2"/>
+<path d="M 904,222 V 358" stroke="#2458b5" stroke-width="3"/>
+<text x="1085.0" y="243" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#2458b5">[Container]</text>
+<text x="1085.0" y="267" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Operations Assistant</text>
+<text x="1085.0" y="292" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Python / API Lambda</text>
+<text x="1085.0" y="313" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Authorize scope; save durable jobs.</text>
+<text x="1085.0" y="334" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Return HTTP 202 or a valid cached answer.</text>
+<rect x="900" y="445" width="250" height="140" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="2"/>
+<path d="M 904,447 V 583" stroke="#705580" stroke-width="3"/>
+<text x="1025.0" y="468" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#705580">[Container]</text>
+<text x="1025.0" y="492" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Job Queues</text>
+<text x="1025.0" y="517" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Amazon SQS</text>
+<text x="1025.0" y="538" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Work + dead-letter queues</text>
+<text x="1025.0" y="559" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Retry safely; defer excess work.</text>
+<rect x="1230" y="445" width="320" height="140" rx="7" fill="#edf3ff" stroke="#2458b5" stroke-width="2"/>
+<path d="M 1234,447 V 583" stroke="#2458b5" stroke-width="3"/>
+<text x="1390.0" y="468" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#2458b5">[Container]</text>
+<text x="1390.0" y="492" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Assistant Workers</text>
+<text x="1390.0" y="517" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Python / AWS Lambda</text>
+<text x="1390.0" y="538" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">SQL reports; model explains facts.</text>
+<text x="1390.0" y="559" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Save progress; fair tenant budgets.</text>
+<rect x="260" y="680" width="350" height="150" rx="7" fill="#edf8f6" stroke="#166b69" stroke-width="2"/>
+<path d="M 260,692 C 260,676 610,676 610,692 C 610,708 260,708 260,692" fill="#edf8f6" stroke="#166b69" stroke-width="2"/>
+<text x="435.0" y="723" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#166b69">[Database]</text>
+<text x="435.0" y="747" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">RDS / Postgres</text>
+<text x="435.0" y="772" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Amazon RDS / PostgreSQL</text>
+<text x="435.0" y="793" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Scope rules, jobs and versioned cache</text>
+<text x="435.0" y="814" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Shipments, live results, quota counters</text>
+<rect x="740" y="680" width="280" height="150" rx="7" fill="#edf8f6" stroke="#166b69" stroke-width="2"/>
+<path d="M 740,692 C 740,676 1020,676 1020,692 C 1020,708 740,708 740,692" fill="#edf8f6" stroke="#166b69" stroke-width="2"/>
+<text x="880.0" y="723" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#166b69">[Datastore]</text>
+<text x="880.0" y="747" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Document Storage</text>
+<text x="880.0" y="772" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Amazon S3</text>
+<text x="880.0" y="793" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Customer document files</text>
+<text x="880.0" y="814" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Check access before file reads.</text>
+<rect x="1140" y="680" width="350" height="150" rx="7" fill="#edf8f6" stroke="#166b69" stroke-width="2"/>
+<path d="M 1140,692 C 1140,676 1490,676 1490,692 C 1490,708 1140,708 1140,692" fill="#edf8f6" stroke="#166b69" stroke-width="2"/>
+<text x="1315.0" y="723" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#166b69">[Database]</text>
+<text x="1315.0" y="747" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Vector DB</text>
+<text x="1315.0" y="772" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Existing vector service</text>
+<text x="1315.0" y="793" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Filter customer + document access.</text>
+<text x="1315.0" y="814" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Plan ~5.27M vectors (assumption).</text>
+<rect x="260" y="900" width="330" height="130" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="2"/>
+<path d="M 264,902 V 1028" stroke="#705580" stroke-width="3"/>
+<text x="425.0" y="923" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#705580">[Container]</text>
+<text x="425.0" y="947" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Shipment Ingest Job</text>
+<text x="425.0" y="972" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Scheduled Lambda</text>
+<text x="425.0" y="993" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Refresh from feed every 4 hours.</text>
+<text x="425.0" y="1014" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Keep newer live status.</text>
+<rect x="740" y="900" width="280" height="130" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="2"/>
+<path d="M 744,902 V 1028" stroke="#705580" stroke-width="3"/>
+<text x="880.0" y="923" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#705580">[Container]</text>
+<text x="880.0" y="947" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Document Index Job</text>
+<text x="880.0" y="972" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Proposed indexing job</text>
+<text x="880.0" y="993" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Tag customer and document access.</text>
+<text x="880.0" y="1014" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Parser / embedding API: TBD.</text>
+<rect x="1220" y="900" width="270" height="130" rx="7" fill="#f6f1f8" stroke="#705580" stroke-width="2"/>
+<path d="M 1224,902 V 1028" stroke="#705580" stroke-width="3"/>
+<text x="1355.0" y="923" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#705580">[Container]</text>
+<text x="1355.0" y="947" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">CloudWatch Logs</text>
+<text x="1355.0" y="972" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Amazon CloudWatch</text>
+<text x="1355.0" y="993" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Tenant + job metrics; alarms</text>
+<text x="1355.0" y="1014" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Queue age, data age, errors, spend</text>
+<rect x="1650" y="405" width="240" height="140" rx="7" fill="#f0f2f5" stroke="#526070" stroke-width="2"/>
+<path d="M 1654,407 V 543" stroke="#526070" stroke-width="3"/>
+<text x="1770.0" y="428" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#526070">[External System]</text>
+<text x="1770.0" y="452" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">LLM Vendor</text>
+<text x="1770.0" y="477" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Existing model vendor</text>
+<text x="1770.0" y="498" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Interpret questions.</text>
+<text x="1770.0" y="519" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Explain checked facts.</text>
+<rect x="1650" y="635" width="240" height="140" rx="7" fill="#f0f2f5" stroke="#526070" stroke-width="2"/>
+<path d="M 1654,637 V 773" stroke="#526070" stroke-width="3"/>
+<text x="1770.0" y="658" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#526070">[External System]</text>
+<text x="1770.0" y="682" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Carrier Tracking API</text>
+<text x="1770.0" y="707" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">One shared account</text>
+<text x="1770.0" y="728" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Live shipment status</text>
+<text x="1770.0" y="749" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Defer checks above the quota.</text>
+<rect x="30" y="900" width="170" height="130" rx="7" fill="#f0f2f5" stroke="#526070" stroke-width="2"/>
+<path d="M 34,902 V 1028" stroke="#526070" stroke-width="3"/>
+<text x="115.0" y="923" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#526070">[External System]</text>
+<text x="115.0" y="947" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Carrier Bulk</text>
+<text x="115.0" y="972" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#172337">Feed</text>
+<text x="115.0" y="997" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Carrier shipment data</text>
+<text x="115.0" y="1018" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#172337">Shipments and events</text>
+<rect x="182.5" y="257" width="49.0" height="26" rx="2" fill="#ffffff"/>
+<text x="207" y="273" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Uses</text>
+<rect x="515.5" y="257" width="59.0" height="26" rx="2" fill="#ffffff"/>
+<text x="545" y="273" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">HTTPS</text>
+<rect x="834.5" y="257" width="61.0" height="26" rx="2" fill="#ffffff"/>
+<text x="865" y="273" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Invoke</text>
+<rect x="401.5" y="370" width="337.0" height="26" rx="2" fill="#ffffff"/>
+<text x="570" y="386" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Read scoped cache / save job + outbox / read result</text>
+<rect x="1001.5" y="385" width="137.0" height="26" rx="2" fill="#ffffff"/>
+<text x="1070" y="401" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Publish durable job</text>
+<rect x="1156.5" y="483" width="67.0" height="26" rx="2" fill="#ffffff"/>
+<text x="1190" y="499" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Run job</text>
+<rect x="609.0" y="615" width="362.0" height="26" rx="2" fill="#ffffff"/>
+<text x="790" y="631" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">SQL reports / save results / share cache and quota state</text>
+<rect x="1313.5" y="614" width="173.0" height="26" rx="2" fill="#ffffff"/>
+<text x="1400" y="630" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Read permitted passages</text>
+<rect x="1555.0" y="452" width="88.0" height="26" rx="2" fill="#ffffff"/>
+<text x="1599" y="468" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Model calls</text>
+<rect x="1665.5" y="571" width="189.0" height="46" rx="2" fill="#ffffff"/>
+<text x="1760" y="587" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Shared limiter + reuse</text>
+<text x="1760" y="607" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">60 successes / calendar min</text>
+<rect x="1545.5" y="834" width="49.0" height="26" rx="2" fill="#ffffff"/>
+<text x="1570" y="850" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Logs</text>
+<rect x="452.5" y="836" width="191.0" height="26" rx="2" fill="#ffffff"/>
+<text x="548" y="852" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Update rows + data version</text>
+<rect x="794.5" y="836" width="171.0" height="26" rx="2" fill="#ffffff"/>
+<text x="880" y="852" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Read / watch documents</text>
+<rect x="1110.0" y="840" width="136.0" height="26" rx="2" fill="#ffffff"/>
+<text x="1178" y="856" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#465469">Write tagged index</text>
+<text x="330" y="470" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" text-anchor="start" fill="#2458b5">ACCESS AND FRESHNESS</text>
+<text x="330" y="498" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#172337">Cache by customer + access scope.</text>
+<text x="330" y="521" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#172337">Check permissions on each read.</text>
+<text x="330" y="544" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#172337">Use data versions and source time.</text>
+<text x="620" y="470" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" text-anchor="start" fill="#2458b5">COMPLETE RESULTS</text>
+<text x="620" y="498" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#172337">SQL checks the full shipment set.</text>
+<text x="620" y="521" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#172337">Show checked / total live coverage.</text>
+<text x="620" y="544" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#172337">Do not cache partial results.</text>
+<text x="330" y="610" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#465469">Job reads support reconnects. Workers bound time and cost; duplicate jobs are safe to repeat.</text>
+<text x="260" y="1054" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" text-anchor="start" fill="#465469">Vector estimate: 9,000 / 300 × 175,750. Trackers and email are deferred. All application containers send logs.</text>
 </svg>

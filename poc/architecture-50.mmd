@@ -2,42 +2,50 @@
 %% architecture-50.svg preserves the exact 16:9 review layout.
 %% This source preserves the C4 container structure.
 C4Container
-    title Freight operations assistant — Proposed design for 50 customers
-    Person(operator, "Operator / User", "Customer team member")
+    title Freight operations assistant — Proposed fifty-customer pilot; not implemented
+    Person(operator, "Operator / User", "Operator or team lead")
 
-    System_Boundary(system, "Freight Operations Assistant — 50 Customers") {
-        Container(web, "Web Client", "Browser application", "Shows answers and job status; reuses request ID on retry")
-        Container(gateway, "API Gateway", "AWS API Gateway", "Checks user identity; routes questions and job reads")
-        Container(api, "Operations Assistant", "API Lambda", "Checks tenant access and job limits; returns answer or job ID")
-        Container(queue, "Job Queues", "Amazon SQS", "Work queue and dead-letter queue; retries failed jobs")
-        Container(worker, "Assistant Workers", "AWS Lambda", "SQL reports and model use; limits for jobs and carrier calls")
-        ContainerDb(postgres, "RDS / Postgres", "Amazon RDS / PostgreSQL", "Tenant rules, jobs, caches and quotas; primary and standby in two zones")
-        ContainerDb(s3, "Document Storage", "Amazon S3", "Customer document files; separate tenant paths")
-        ContainerDb(vector, "Vector DB", "Existing vector service", "Search only permitted documents; tenant and document access filters")
-        Container(ingest, "Shipment Ingest Job", "Scheduled Lambda", "Updates shipment data; feed interval every 4 hours")
-        Container(indexer, "Document Index Job", "Lambda / S3 events", "Reads and tags document text; updates the search index")
-        Container(logs, "CloudWatch Logs", "Amazon CloudWatch", "Logs, cost metrics and alarms; tracks each tenant and job")
+    System_Boundary(system, "Freight Operations Assistant — 50-Customer Pilot") {
+        Container(web, "Web Client", "Browser application", "Submits jobs and reads progress; reuses request ID on retry")
+        Container(gateway, "API Gateway", "AWS API Gateway", "Verifies user identity; routes jobs and result reads")
+        Container(api, "Operations Assistant", "Python / API Lambda", "Authorizes scope; saves durable jobs; returns HTTP 202 or a valid cached answer")
+        Container(queue, "Job Queues", "Amazon SQS", "Work and dead-letter queues; safe retries and deferred work")
+        Container(worker, "Assistant Workers", "Python / AWS Lambda", "Computes full SQL reports; model explains facts; saves progress and applies fair budgets")
+        ContainerDb(postgres, "RDS / Postgres", "Amazon RDS / PostgreSQL", "Scope rules, jobs, versioned cache, shipments, live results and shared quota counters")
+        ContainerDb(s3, "Document Storage", "Amazon S3", "Customer document files; access checks before file reads")
+        ContainerDb(vector, "Vector DB", "Existing vector service", "Customer and document access filters; capacity plan about 5.27M vectors, assuming pilot ratio")
+        Container(ingest, "Shipment Ingest Job", "Scheduled Lambda", "Refreshes from feed every 4 hours; preserves newer live status")
+        Container(indexer, "Document Index Job", "Proposed indexing job", "Tags customer and document access; parser and embedding API unspecified")
+        Container(logs, "CloudWatch Logs", "Amazon CloudWatch", "Tenant and job metrics; queue age, data age, errors, spend and alarms")
     }
 
-    System_Ext(llm, "LLM Vendor", "m-fast for simple work; m-large for complex work")
-    System_Ext(carrier, "Carrier Tracking API", "One shared account quota; current limit 60 requests/minute")
+    System_Ext(llm, "LLM Vendor", "Existing model vendor; interprets questions and explains checked facts")
+    System_Ext(carrier, "Carrier Tracking API", "One shared account; 60 successful calls per calendar minute")
     System_Ext(feed, "Carrier Bulk Feed", "Shipment and event data")
 
     Rel_R(operator, web, "Uses")
-    Rel_R(web, gateway, "Questions and job reads", "HTTPS")
+    Rel_R(web, gateway, "Questions, progress and result reads", "HTTPS")
     Rel_R(gateway, api, "Invoke with user identity")
-    Rel_D(api, postgres, "Read cache; save job; read result", "SQL")
-    Rel_D(api, queue, "Queue job")
+    Rel_D(api, postgres, "Read scoped cache; save job and outbox; read result", "SQL")
+    Rel_D(api, queue, "Publish durable job; retry pending outbox rows")
     Rel_R(queue, worker, "Run job")
     Rel_R(worker, llm, "Model calls", "Vendor SDK")
-    Rel_R(worker, carrier, "Live status within the account quota", "HTTPS")
-    Rel_D(worker, postgres, "SQL reports; save results; share recent status", "SQL")
+    Rel_R(worker, carrier, "Shared limiter and reuse; defer checks above the quota", "HTTPS")
+    Rel_D(worker, postgres, "SQL reports; save results; share cache and quota state", "SQL")
     Rel_D(worker, vector, "Read permitted passages")
     Rel_R(feed, ingest, "Bulk shipment data")
-    Rel_U(ingest, postgres, "Update shipment rows", "SQL")
-    Rel_D(s3, indexer, "New documents")
-    Rel_U(indexer, vector, "Write document index")
+    Rel_U(ingest, postgres, "Update rows and data version; preserve newer live status", "SQL")
+    Rel_D(s3, indexer, "Read and watch documents")
+    Rel_U(indexer, vector, "Write index with customer and document access tags")
     Rel_D(worker, logs, "Job logs, metrics and alarms")
+
+    %% All 50 sales-list customers live: 5,267 users, 374 leads, 175,750 shipments.
+    %% Workers own the limiter, full SQL reports, tool checks and model loop.
+    %% Cache identity includes customer and permitted team/user scope.
+    %% Invalidate old data. Show source time and checked/total live coverage.
+    %% Partial reports do not enter the complete-answer cache.
+    %% Durable jobs support reconnects, time/cost limits and safe repeated delivery.
+    %% Other application containers also send logs. Trackers and email are deferred.
 
     UpdateElementStyle(operator, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
     UpdateElementStyle(web, $bgColor="#edf3ff", $fontColor="#172337", $borderColor="#2458b5")

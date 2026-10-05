@@ -1,5 +1,24 @@
 # Run the cost model and charts
 
+## Show the pilot issues
+
+Run these commands from the repository folder:
+
+```powershell
+uv run --locked analyze_pilot.py
+uv run --locked test_pilot_analysis.py
+```
+
+The analysis creates six charts in [pilot_outputs](pilot_outputs/results.md).
+The charts show timeouts, shipment checks, Monday carrier limits, spend,
+cache scope, and data freshness. Each chart has a PNG preview and an SVG file.
+CSV files contain the evidence. The script checks billing and log totals.
+Cache source matches are inferred. Answer accuracy is not measured.
+
+Use `--data` and `--output` to select other folders. Each run replaces its output files.
+
+## Run the cost model
+
 The model learns four average question costs. It separates operator and team lead questions. It also separates “my shipments” from other questions. It checks predictions on the final two weeks. It compares these predictions with averages based only on role. The tenant projection keeps each role's pilot usage pattern. See [the results](model_outputs/results.md) for assumptions.
 
 The cost model uses only the Python standard library. The chart script uses `matplotlib`. The files in `poc/` are examples for review. They are not runnable scripts.

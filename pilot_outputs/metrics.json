@@ -1,0 +1,18 @@
+{
+  "questions": 1952,
+  "timeouts": 132,
+  "cold_lead_portfolio_questions": 132,
+  "cold_lead_portfolio_timeouts": 131,
+  "cold_lead_portfolio_median_run_seconds": 47.5145,
+  "step_cap_runs": 129,
+  "spend_usd": 54.188814,
+  "timeout_spend_usd": 36.108102,
+  "carrier_429_attempts": 100,
+  "minutes_at_carrier_limit": 4,
+  "inferred_cross_user_hits": 82,
+  "inferred_cross_user_portfolio_hits": 71,
+  "capped_median_listed": 105,
+  "capped_median_live_targets": 8,
+  "live_checks": 1987,
+  "live_checks_different_from_db": 79
+}
