@@ -2,11 +2,11 @@
 
 ## 1. Current pilot architecture
 
-![Current pilot: C4 Container diagram](poc/architecture-review.png)
+![Current pilot: C4 Container diagram](docs/architecture/architecture-review.png)
 
 One customer has 40 users and 300 active shipments. API Gateway calls one Lambda. The Lambda uses `m-large`, four tools, Postgres, a carrier API, and a document index over S3 files. The free feed updates shipments every four hours. The gateway limit is 29 seconds; Lambda can run for 90 seconds.
 
-Sources: [POC](poc/README.md), [handler](poc/handler.py), [tools](poc/tools.py), [limits](costs-and-limits.md). [SVG review layout](poc/architecture-review.svg) · [Mermaid C4 source](poc/architecture-review.mmd).
+Sources: [POC](poc/README.md), [handler](poc/handler.py), [tools](poc/tools.py), [limits](costs-and-limits.md). [SVG review layout](docs/architecture/architecture-review.svg) · [Mermaid C4 source](docs/architecture/architecture-review.mmd).
 
 ## 2. Problems found in the pilot
 
@@ -28,7 +28,7 @@ The 42-day pilot has 1,952 questions. Portfolio questions contain “my shipment
 
 ## 3. Proposed architecture for fifty customers
 
-![Proposed fifty-customer C4 architecture with Cognito](poc/architecture-50.png)
+![Proposed fifty-customer C4 architecture with Cognito](docs/architecture/architecture-50.png)
 
 **This is proposed, not implemented.** Keep shared API Gateway, Lambda, Postgres, S3, vector services, and the free feed. The roster totals 5,267 seats, 374 leads, and 175,750 shipments.
 
@@ -46,7 +46,7 @@ A queue does not raise carrier capacity. Freshness reuse needs product agreement
 
 Before the next customer: fix access, cache scope, complete reports, durable jobs, and the shared quota. Add backups, database failover, and capped concurrency before paid production use. Monitor cost, freshness, errors, and queue age. Then test savings and Monday load. Model interpretation and explanations remain read-only. Email and other external actions are deferred.
 
-[Design notes](poc/architecture-50.txt) · [SVG review layout](poc/architecture-50.svg) · [Mermaid C4 source](poc/architecture-50.mmd). Recovery and capacity remain untested. Cost forecasts retain pilot usage and capped work. One lead represents future leads. Safe, complete answers can cost more.
+[Design notes](docs/architecture/architecture-50.txt) · [SVG review layout](docs/architecture/architecture-50.svg) · [Mermaid C4 source](docs/architecture/architecture-50.mmd). Recovery and capacity remain untested. Cost forecasts retain pilot usage and capped work. One lead represents future leads. Safe, complete answers can cost more.
 
 <div style="page-break-before: always;"></div>
 
@@ -60,7 +60,7 @@ Original: $250.47/customer, $2.38/seat. Revenue: $45,340/month at $6–$10/seat.
 
 ![Same m-large model: monthly cost scenarios](redesign_cost_outputs/fixed_model_cost_projection.png)
 
-Proposed: $96.69/customer, $0.92/seat. Reductions are untested. [Calculation](plot_redesign_costs.py), [CSV](redesign_cost_outputs/fixed_model_cost_projection.csv).
+Proposed: $96.69/customer, $0.92/seat. Reductions are untested. [Calculation](scripts/plot_redesign_costs.py), [CSV](redesign_cost_outputs/fixed_model_cost_projection.csv).
 
 Model/carrier: Oct 2026 $223.33; Jan 2027 $1,009.58; Sep 2027 $4,834.75/month. Assume all [go-live dates](data/tenants.csv), including pipeline customers, full 30-day months, and both reductions from the start.
 

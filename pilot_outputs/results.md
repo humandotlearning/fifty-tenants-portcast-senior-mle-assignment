@@ -35,6 +35,6 @@ These means hide the failures below. These charts show observed pilot work. They
 - Infer writes at Lambda completion. Assume completed new runs write their result, as the handler shows. Match the last write within 24 hours. Exact write times and full keys are absent. Matches flag scope risk, not proven answer disclosure.
 - Live checks can repeat shipments. The assistant selects these checks. Do not apply the observed difference rate to all shipments.
 - The pilot has one lead. Role and scope overlap. These observations do not prove a cause or predict all future leads.
-- Check tool counts, token tariffs, carrier billing, and timeout limits on every run. Run `uv run --locked test_pilot_analysis.py` for small input checks.
+- Check tool counts, token tariffs, carrier billing, and timeout limits on every run. Run `uv run --locked scripts/test_pilot_analysis.py` for small input checks.
 
-Run `uv run --locked analyze_pilot.py` to reproduce the outputs. Use `--data` and `--output` to select folders. Each run replaces the named output files. PNG files provide previews. SVG files preserve text and lines for export. CSV files contain chart evidence. `metrics.json` contains the main totals.
+Run `uv run --locked scripts/analyze_pilot.py` to reproduce the outputs. Use `--data` and `--output` to select folders. Each run replaces the named output files. PNG files provide previews. SVG files preserve text and lines for export. CSV files contain chart evidence. `metrics.json` contains the main totals.

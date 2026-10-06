@@ -284,8 +284,8 @@ def plot_freshness(tools, output):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data", type=Path, default=Path(__file__).parent / "data")
-    parser.add_argument("--output", type=Path, default=Path(__file__).parent / "pilot_outputs")
+    parser.add_argument("--data", type=Path, default=Path(__file__).resolve().parent.parent / "data")
+    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent.parent / "pilot_outputs")
     args = parser.parse_args()
     questions, tools, users = [read(args.data / name) for name in ["pilot_questions.csv", "pilot_tool_calls.csv", "pilot_users.csv"]]
     rows, minutes = build_evidence(questions, tools, users)
@@ -347,9 +347,9 @@ These means hide the failures below. These charts show observed pilot work. They
 - Infer writes at Lambda completion. Assume completed new runs write their result, as the handler shows. Match the last write within 24 hours. Exact write times and full keys are absent. Matches flag scope risk, not proven answer disclosure.
 - Live checks can repeat shipments. The assistant selects these checks. Do not apply the observed difference rate to all shipments.
 - The pilot has one lead. Role and scope overlap. These observations do not prove a cause or predict all future leads.
-- Check tool counts, token tariffs, carrier billing, and timeout limits on every run. Run `uv run --locked test_pilot_analysis.py` for small input checks.
+- Check tool counts, token tariffs, carrier billing, and timeout limits on every run. Run `uv run --locked scripts/test_pilot_analysis.py` for small input checks.
 
-Run `uv run --locked analyze_pilot.py` to reproduce the outputs. Use `--data` and `--output` to select folders. Each run replaces the named output files. PNG files provide previews. SVG files preserve text and lines for export. CSV files contain chart evidence. `metrics.json` contains the main totals.
+Run `uv run --locked scripts/analyze_pilot.py` to reproduce the outputs. Use `--data` and `--output` to select folders. Each run replaces the named output files. PNG files provide previews. SVG files preserve text and lines for export. CSV files contain chart evidence. `metrics.json` contains the main totals.
 """
     (args.output / "results.md").write_text(report, encoding="utf-8")
     print(json.dumps(metrics, indent=2))

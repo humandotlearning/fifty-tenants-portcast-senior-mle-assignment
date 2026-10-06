@@ -30,14 +30,14 @@ Run from the repository folder. Install `uv` as shown in the [README](../README.
 
 ```powershell
 uv sync --locked
-uv run --locked cost_model.py
-uv run --locked cost_model.py --lead-frequency 0.5 --output model_outputs_half_lead
+uv run --locked scripts/cost_model.py
+uv run --locked scripts/cost_model.py --lead-frequency 0.5 --output model_outputs_half_lead
 ```
 
 To select other input and output folders:
 
 ```powershell
-uv run --locked cost_model.py --data data --output outputs
+uv run --locked scripts/cost_model.py --data data --output outputs
 ```
 
 Validation: both default and half-lead runs passed inline checks for calendar coverage, tariff reconstruction, tool/question carrier agreement, pilot-total reproduction and tenant seat tiers. Capacity simulation and a shipment-size regression were deliberately omitted.

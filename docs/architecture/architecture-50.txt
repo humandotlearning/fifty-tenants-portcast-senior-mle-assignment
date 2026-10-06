@@ -25,8 +25,8 @@ Cache access uses customer and permitted team or user scope. Job reads check
 access again. Trackers and email are deferred. They would share the same carrier
 budget if added. The vector estimate assumes the pilot's vectors per shipment.
 
-The evidence comes from handler.py, tools.py, schema.sql, prompt.md,
-costs-and-limits.md and the pilot CSV files. The pilot has 1,952 questions.
+The evidence comes from ../../poc/handler.py, ../../poc/tools.py, ../../poc/schema.sql, ../../poc/prompt.md,
+../../costs-and-limits.md and the pilot CSV files in ../../data/. The pilot has 1,952 questions.
 There are 132 HTTP 504 responses and 129 runs that reach the step limit.
 All 129 capped runs are shipment-list questions. Timed-out runs account for
 66.6% of pilot model and carrier spend. The carrier logs have 100 rejected

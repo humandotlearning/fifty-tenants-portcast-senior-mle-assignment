@@ -42,5 +42,5 @@ Resolve the visual paths below from the current repository root.
 
 ## Existing visual reference
 
-- Use `poc/architecture-review.svg` and `poc/architecture-review.png` as the
+- Use `docs/architecture/architecture-review.svg` and `docs/architecture/architecture-review.png` as the
   existing visual reference, not as evidence that architectural facts are current.

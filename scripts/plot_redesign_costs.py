@@ -1,8 +1,7 @@
 """Plot the fixed-model cost scenarios. Do not change the earlier reports.
 
 Run from the project folder in PowerShell:
-    $env:PYTHONPATH = "$PWD\\.plot_deps"
-    python plot_redesign_costs.py
+    uv run --locked scripts/plot_redesign_costs.py
 
 The token and carrier reductions are untested assumptions.
 All comparison bars exclude infrastructure and indexing costs.
@@ -17,9 +16,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.ticker import StrMethodFormatter
 
-root = Path(__file__).resolve().parent
+root = Path(__file__).resolve().parent.parent
 output = root / "redesign_cost_outputs"
-baseline = json.loads((root / "poc/architecture-50-costs.json").read_text(encoding="utf-8"))
+baseline = json.loads((root / "docs/architecture/architecture-50-costs.json").read_text(encoding="utf-8"))
 prices = (root / "costs-and-limits.md").read_text(encoding="utf-8")
 model_price_row = next(line for line in prices.splitlines() if line.startswith("| `m-large`"))
 assert "| $2.00 / 1M tokens | $8.00 / 1M tokens |" in model_price_row
@@ -97,7 +96,7 @@ fig.text(.08, .185, "SCENARIO ASSUMPTIONS — reductions are untested; all bars 
 fig.text(.08, .147, "m-large: $2 / 1M input tokens, $8 / 1M output tokens. Carrier: $0.004 / successful call.", fontsize=14)
 fig.text(.08, .109, f"Proposed 10M-vector tier: +$300/month. Last case: ${vector_subtotal:,.2f} + other infrastructure and indexing costs.", fontsize=14)
 fig.text(.08, .071, "Carrier savings require agreed data freshness. A queue alone saves no model or carrier cost.", fontsize=14)
-fig.text(.08, .033, "Safe caching and complete reports can change usage. Source: poc/architecture-50-costs.json.", fontsize=14, color="#465469")
+fig.text(.08, .033, "Safe caching and complete reports can change usage. Source: docs/architecture/architecture-50-costs.json.", fontsize=14, color="#465469")
 fig.subplots_adjust(left=.10, right=.95, top=.82, bottom=.30)
 fig.savefig(output / "fixed_model_cost_projection.png", dpi=180, facecolor="white")
 fig.savefig(output / "fixed_model_cost_projection.svg", facecolor="white")

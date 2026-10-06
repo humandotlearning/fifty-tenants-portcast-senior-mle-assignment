@@ -10,8 +10,8 @@ from matplotlib.ticker import StrMethodFormatter
 from cost_model import read, fit
 
 p = argparse.ArgumentParser(description=__doc__)
-p.add_argument("--data", type=Path, default=Path(__file__).parent / "data")
-p.add_argument("--output", type=Path, default=Path(__file__).parent / "model_outputs")
+p.add_argument("--data", type=Path, default=Path(__file__).resolve().parent.parent / "data")
+p.add_argument("--output", type=Path, default=Path(__file__).resolve().parent.parent / "model_outputs")
 a = p.parse_args()
 q, users, tenants = read(a.data / "pilot_questions.csv"), read(a.data / "pilot_users.csv"), read(a.data / "tenants.csv")
 roles = {u["user_id"]: u["role"] for u in users}

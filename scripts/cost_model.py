@@ -21,8 +21,8 @@ def fit(rows, detailed=True):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data", type=Path, default=Path(__file__).parent / "data")
-    parser.add_argument("--output", type=Path, default=Path(__file__).parent / "model_outputs")
+    parser.add_argument("--data", type=Path, default=Path(__file__).resolve().parent.parent / "data")
+    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent.parent / "model_outputs")
     parser.add_argument("--lead-frequency", type=float, default=1, help="Relative to the single pilot lead")
     args = parser.parse_args()
     if args.lead_frequency < 0:
