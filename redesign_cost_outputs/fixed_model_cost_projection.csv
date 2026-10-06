@@ -1,0 +1,4 @@
+scenario,model,input_token_factor,output_token_factor,carrier_call_factor,model_usd_month,carrier_usd_month,total_usd_month,cost_usd_seat_month,scope
+Original role-based projection,m-large,1,1,1,10777.225776153833,1746.1830769230812,12523.4088530769142,2.377711952359391342320106322,Model + carrier only; infrastructure excluded
+60% fewer tokens; carrier calls unchanged,m-large,0.4,0.4,1,4310.8903104615332,1746.1830769230812,6057.0733873846144,1.150004440361612758686159104,Model + carrier only; infrastructure excluded
+60% fewer tokens; 70% fewer paid carrier calls,m-large,0.4,0.4,0.3,4310.8903104615332,523.85492307692436,4834.74523353845756,0.9179315043741138333016897665,Model + carrier only; infrastructure excluded
