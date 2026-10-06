@@ -3,10 +3,22 @@ Proposed architecture for a fifty-customer pilot
 This design is a proposal. It is not implemented. Keep the current API Gateway,
 Lambda, Postgres, S3, vector service and free carrier bulk feed. Share these
 services across customers. Add an SQS work queue and a dead-letter queue. Split
-the request handler from the workers. Use the SVG for the exact review layout.
-The Mermaid file gives the C4 container structure. The SVG preserves the exact
-review layout. The PNG preview is 3840 by 2160 pixels. The diagram shows the main
-relationships. Other application containers also send logs to CloudWatch.
+the request handler from the workers.
+
+Two views show the same proposed system:
+- architecture-50.svg is the C4 Container view.
+- architecture-50-aws.svg is the AWS service view.
+The SVG files preserve the exact review layouts. Each PNG preview is 3840 by
+2160 pixels. architecture-50.mmd gives the shared C4 container structure.
+The diagrams show the main relationships. Other application containers also
+send logs to CloudWatch. The AWS boundary groups managed services. It does not
+specify a VPC or subnet layout. The browser and existing model and vector
+vendors stay outside that boundary. Web hosting is unspecified.
+
+The AWS view uses icon shapes from the July 2026 AWS architecture icon package.
+Icon backgrounds use the diagram's four role colour families. The model and
+vector vendors remain unchanged. No Bedrock or OpenSearch migration is proposed.
+
 The all-live sales list has 5,267 users, 374 team leads and 175,750 shipments.
 The shared carrier limiter and full SQL reports run inside the workers.
 Cache access uses customer and permitted team or user scope. Job reads check
@@ -22,6 +34,12 @@ attempts. Four pilot calendar minutes reach the 60-successful-calls limit.
 These findings show that a faster model alone cannot fix the system.
 
 1. Enforce customer and user access in code.
+
+Use one shared Cognito user pool for sign-in, MFA and customer SSO. This is the
+proposed pilot configuration. API Gateway uses a Cognito user pool authorizer.
+The gateway-to-Cognito relationship shows this trust configuration. It does not
+mean that every API request calls Cognito. The POC schema refers to a Cognito
+user ID, but the deployment configuration is not included.
 
 Get the user ID from the authorizer. Find the tenant and team membership in
 trusted server data. Do not accept tenant or access scope from the model.
@@ -157,11 +175,15 @@ rollout months and time zones. Test provider failure, duplicate delivery and
 database failover. Check queue delay, data age, database connections and cost
 for each tenant. Use the results to set quotas and decide on capacity upgrades.
 
-The Python cost checks passed. The diagram was rendered and inspected.
+The Python cost checks passed. Both diagram views were rendered and inspected
+at normal screen size and full-canvas size. Diagram checks covered source totals,
+shared responsibilities, relationships, text, spacing and connector clearance.
 No production services or POC application code were changed. Load capacity,
 failover behaviour, model quality and the savings assumptions remain untested.
 
 Technical references:
+https://aws.amazon.com/architecture/icons/
+https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html
 https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.Failover.html
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html

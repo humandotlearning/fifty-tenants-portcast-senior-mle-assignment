@@ -7,11 +7,11 @@ C4Container
 
     System_Boundary(system, "Freight Operations Assistant — 50-Customer Pilot") {
         Container(web, "Web Client", "Browser application", "Submits jobs and reads progress; reuses request ID on retry")
-        Container(gateway, "API Gateway", "AWS API Gateway", "Verifies user identity; routes jobs and result reads")
+        Container(gateway, "API Gateway", "AWS API Gateway / Cognito authorizer", "Validates Cognito tokens; routes jobs and result reads")
         Container(api, "Operations Assistant", "Python / API Lambda", "Authorizes scope; saves durable jobs; returns HTTP 202 or a valid cached answer")
         Container(queue, "Job Queues", "Amazon SQS", "Work and dead-letter queues; safe retries and deferred work")
         Container(worker, "Assistant Workers", "Python / AWS Lambda", "Computes full SQL reports; model explains facts; saves progress and applies fair budgets")
-        ContainerDb(postgres, "RDS / Postgres", "Amazon RDS / PostgreSQL", "Scope rules, jobs, versioned cache, shipments, live results and shared quota counters")
+        ContainerDb(postgres, "RDS / Postgres", "Amazon RDS / PostgreSQL / RLS", "Customer, team and user scope rules; jobs, versioned cache, shipments, live results and quota counters")
         ContainerDb(s3, "Document Storage", "Amazon S3", "Customer document files; access checks before file reads")
         ContainerDb(vector, "Vector DB", "Existing vector service", "Customer and document access filters; capacity plan about 5.27M vectors, assuming pilot ratio")
         Container(ingest, "Shipment Ingest Job", "Scheduled Lambda", "Refreshes from feed every 4 hours; preserves newer live status")
@@ -19,11 +19,14 @@ C4Container
         Container(logs, "CloudWatch Logs", "Amazon CloudWatch", "Tenant and job metrics; queue age, data age, errors, spend and alarms")
     }
 
+    System_Ext(cognito, "Identity Provider", "Amazon Cognito user pool; sign-in, MFA and customer SSO; application enforces data permissions")
     System_Ext(llm, "LLM Vendor", "Existing model vendor; interprets questions and explains checked facts")
     System_Ext(carrier, "Carrier Tracking API", "One shared account; 60 successful calls per calendar minute")
     System_Ext(feed, "Carrier Bulk Feed", "Shipment and event data")
 
     Rel_R(operator, web, "Uses")
+    Rel_U(web, cognito, "Sign in and receive token", "HTTPS")
+    Rel_U(gateway, cognito, "Trust user pool tokens", "Cognito authorizer")
     Rel_R(web, gateway, "Questions, progress and result reads", "HTTPS")
     Rel_R(gateway, api, "Invoke with user identity")
     Rel_D(api, postgres, "Read scoped cache; save job and outbox; read result", "SQL")
@@ -46,6 +49,9 @@ C4Container
     %% Partial reports do not enter the complete-answer cache.
     %% Durable jobs support reconnects, time/cost limits and safe repeated delivery.
     %% Other application containers also send logs. Trackers and email are deferred.
+    %% Cognito supplies identity. Trusted database records supply data permissions.
+    %% The authorizer relationship shows configuration, not a remote check for each request.
+    %% architecture-50-aws.svg maps the same design to AWS services.
 
     UpdateElementStyle(operator, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
     UpdateElementStyle(web, $bgColor="#edf3ff", $fontColor="#172337", $borderColor="#2458b5")
@@ -59,6 +65,7 @@ C4Container
     UpdateElementStyle(ingest, $bgColor="#f6f1f8", $fontColor="#172337", $borderColor="#705580")
     UpdateElementStyle(indexer, $bgColor="#f6f1f8", $fontColor="#172337", $borderColor="#705580")
     UpdateElementStyle(logs, $bgColor="#f6f1f8", $fontColor="#172337", $borderColor="#705580")
+    UpdateElementStyle(cognito, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
     UpdateElementStyle(llm, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
     UpdateElementStyle(carrier, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
     UpdateElementStyle(feed, $bgColor="#f0f2f5", $fontColor="#172337", $borderColor="#526070")
